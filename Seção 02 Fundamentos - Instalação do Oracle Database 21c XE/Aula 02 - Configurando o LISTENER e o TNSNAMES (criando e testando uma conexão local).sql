@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Instalação do Oracle Database 21c XE
+-- Seção: 02 - PL/SQL Fundamentos - Instalação do Oracle Database 21c XE
 -- Aula: 02 - Configurando o LISTENER e o TNSNAMES (criando e testando uma conexão local)
 -- Autor: Emílio Scudero
 -- Identificador: 003
+-- Tempo: 17m
 --
 
 

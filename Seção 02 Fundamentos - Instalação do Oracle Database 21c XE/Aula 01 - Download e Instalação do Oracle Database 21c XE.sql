@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Instalação do Oracle Database 21c XE
+-- Seção: 02 - PL/SQL Fundamentos - Instalação do Oracle Database 21c XE
 -- Aula: 01 - Download e Instalação do Oracle Database 21c XE
 -- Autor: Emílio Scudero
 -- Identificador: 002
+-- Tempo: 29m
 --
 
 

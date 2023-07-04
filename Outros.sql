@@ -1,7 +1,8 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: Oracle PL/SQL Especialista (do básico ao avançado) Completo
+-- Seção: 01 - Oracle PL/SQL Especialista (do básico ao avançado) Completo
 -- Aula: 01 - Apresentação do curso
 -- Autor: Emílio Scudero
 -- Identificador: 001
+-- Tempo: 33m
 --

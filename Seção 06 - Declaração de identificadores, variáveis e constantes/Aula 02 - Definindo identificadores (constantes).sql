@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Declaração de identificadores, variáveis e constantes
+-- Seção: 06 - PL/SQL Fundamentos - Declaração de identificadores, variáveis e constantes
 -- Aula: 02 - Declaração de identificadores (constantes)
 -- Autor: Emílio Scudero
 -- Identificador: 014
+-- Tempo: 8m
 --
 
 

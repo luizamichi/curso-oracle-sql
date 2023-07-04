@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 03 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
 -- Aula: 04 - Criando uma conexão para o usuário HR no SQL Developer
 -- Autor: Emílio Scudero
 -- Identificador: 007
+-- Tempo: 6m
 --
 
 

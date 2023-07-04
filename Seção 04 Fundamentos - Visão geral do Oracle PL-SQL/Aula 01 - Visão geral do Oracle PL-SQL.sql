@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Visão geral do Oracle PL/SQL
+-- Seção: 04 - PL/SQL Fundamentos - Visão geral do Oracle PL/SQL
 -- Aula: 01 - Visão geral do Oracle PL/SQL
 -- Autor: Emílio Scudero
 -- Identificador: 011
+-- Tempo: 36m
 --
 
 

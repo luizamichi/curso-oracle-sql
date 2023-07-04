@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Declaração de identificadores, variáveis e constantes
+-- Seção: 06 - PL/SQL Fundamentos - Declaração de identificadores, variáveis e constantes
 -- Aula: 03 - Tipos de dados no PL-SQL (datatypes)
 -- Autor: Emílio Scudero
 -- Identificador: 015
+-- Tempo: 37m
 --
 
 

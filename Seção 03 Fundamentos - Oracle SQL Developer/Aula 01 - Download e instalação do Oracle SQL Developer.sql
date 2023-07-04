@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 03 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
 -- Aula: 01 - Download e instalação do Oracle SQL Developer
 -- Autor: Emílio Scudero
 -- Identificador: 004
+-- Tempo: 6m
 --
 
 

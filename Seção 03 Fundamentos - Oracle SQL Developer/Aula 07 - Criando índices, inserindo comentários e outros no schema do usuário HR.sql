@@ -1,9 +1,10 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 03 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
 -- Aula: 07 - Criando índices, inserindo comentários e outros no schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 010
+-- Tempo: 4m
 --
 
 
