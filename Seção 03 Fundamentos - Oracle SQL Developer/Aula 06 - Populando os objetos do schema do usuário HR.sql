@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
--- Aula 06 - Populando os objetos do schema do usuário HR
+-- Aula: 06 - Populando os objetos do schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 009
 --

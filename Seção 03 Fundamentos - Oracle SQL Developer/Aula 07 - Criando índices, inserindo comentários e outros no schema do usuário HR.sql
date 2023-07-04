@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
--- Aula 07 - Criando índices, inserindo comentários e outros no schema do usuário HR
+-- Aula: 07 - Criando índices, inserindo comentários e outros no schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 010
 --
@@ -49,8 +49,9 @@ COMMIT;
 CREATE OR REPLACE PROCEDURE secure_dml
 IS
 BEGIN
-  IF TO_CHAR (SYSDATE, 'HH24:MI') NOT BETWEEN '08:00' AND '18:00'
-    OR TO_CHAR (SYSDATE, 'DY') IN ('SAT', 'SUN') THEN
+  IF TO_CHAR(SYSDATE, 'HH24:MI') NOT BETWEEN '08:00' AND '18:00'
+    OR TO_CHAR(SYSDATE, 'DY') IN ('SAT', 'SUN')
+  THEN
     RAISE_APPLICATION_ERROR (-20205, 'You may only make changes during normal office hours');
   END IF;
 END secure_dml;

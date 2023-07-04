@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
--- Aula 05 - Criando os objetos do schema do usuário HR
+-- Aula: 05 - Criando os objetos do schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 008
 --
@@ -167,6 +167,7 @@ CREATE SEQUENCE employees_seq
   NOCYCLE;
 
 /* Job History */
+
 CREATE TABLE job_history (
   employee_id NUMBER(6) CONSTRAINT jhist_employee_nn NOT NULL,
   start_date DATE CONSTRAINT jhist_start_date_nn NOT NULL,

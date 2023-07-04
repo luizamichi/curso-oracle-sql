@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
--- Aula 03 - Criando um usuário HR
+-- Aula: 03 - Criando um usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 006
 --
@@ -13,7 +13,7 @@
 /*
 
 /*
-  Configura a sessão para o pluggable database XEPDB1
+  Configura a sessão para o Pluggable Database XEPDB1
 */
 
 ALTER SESSION SET CONTAINER = XEPDB1;
