@@ -17,7 +17,7 @@ DECLARE
   vNumero2 NUMBER(11, 2) := 5000;
 BEGIN
   :gMedia := (vNumero1 + vNumero2) / 2;
-  DBMS_OUTPUT.PUT_LINE('Média = ' || TO_CHAR(:gMedia));
+  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(:gMedia));
 EXCEPTION
   WHEN OTHERS
   THEN

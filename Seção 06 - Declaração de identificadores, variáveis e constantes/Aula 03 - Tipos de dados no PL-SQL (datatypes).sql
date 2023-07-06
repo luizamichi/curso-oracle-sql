@@ -28,32 +28,32 @@ DECLARE
   vNumeroFloat BINARY_FLOAT := 15000000;
   vNumeroDouble BINARY_DOUBLE := 15000000;
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Número = ' || vNumero);
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo = ' || vCaracterTamFixo);
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável = ' || vCaracterTamVariavel);
+  DBMS_OUTPUT.PUT_LINE('Número: ' || vNumero);
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo: ' || vCaracterTamFixo);
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável: ' || vCaracterTamVariavel);
 
   IF vBooleano = TRUE
   THEN
-    DBMS_OUTPUT.PUT_LINE('Booleano = ' || 'TRUE');
+    DBMS_OUTPUT.PUT_LINE('Booleano: ' || 'TRUE');
   ELSE
-    DBMS_OUTPUT.PUT_LINE('Booleano = ' || 'FALSE OR NULL');
+    DBMS_OUTPUT.PUT_LINE('Booleano: ' || 'FALSE OR NULL');
   END IF;
 
-  DBMS_OUTPUT.PUT_LINE('Data = ' || vData);
-  DBMS_OUTPUT.PUT_LINE('Long = ' || vLong);
-  DBMS_OUTPUT.PUT_LINE('Long raw = ' || vLongRaw);
+  DBMS_OUTPUT.PUT_LINE('Data: ' || vData);
+  DBMS_OUTPUT.PUT_LINE('Long: ' || vLong);
+  DBMS_OUTPUT.PUT_LINE('Long raw: ' || vLongRaw);
 
   SELECT rowid INTO vRowId
     FROM employees
    WHERE first_name = 'Steven'
      AND last_name = 'King';
 
-  DBMS_OUTPUT.PUT_LINE('RowId = ' || vRowId);
-  DBMS_OUTPUT.PUT_LINE('Timestamp = ' || vTimestamp);
-  DBMS_OUTPUT.PUT_LINE('Timestamp com time zone = ' || vTimestampTz);
-  DBMS_OUTPUT.PUT_LINE('String com caracteres de tamanho fixo = ' || vCaracterTamFixoUniversal);
-  DBMS_OUTPUT.PUT_LINE('String com caracteres de tamanho variável = ' || vCaracterTamVariavelUniversal);
-  DBMS_OUTPUT.PUT_LINE('Número inteiro = ' || vNumeroInteiro);
-  DBMS_OUTPUT.PUT_LINE('Número float = ' || vNumeroFloat);
-  DBMS_OUTPUT.PUT_LINE('Número double = ' || vNumeroDouble);
+  DBMS_OUTPUT.PUT_LINE('RowId: ' || vRowId);
+  DBMS_OUTPUT.PUT_LINE('Timestamp: ' || vTimestamp);
+  DBMS_OUTPUT.PUT_LINE('Timestamp com time zone: ' || vTimestampTz);
+  DBMS_OUTPUT.PUT_LINE('String com caracteres de tamanho fixo: ' || vCaracterTamFixoUniversal);
+  DBMS_OUTPUT.PUT_LINE('String com caracteres de tamanho variável: ' || vCaracterTamVariavelUniversal);
+  DBMS_OUTPUT.PUT_LINE('Número inteiro: ' || vNumeroInteiro);
+  DBMS_OUTPUT.PUT_LINE('Número float: ' || vNumeroFloat);
+  DBMS_OUTPUT.PUT_LINE('Número double: ' || vNumeroDouble);
 END;

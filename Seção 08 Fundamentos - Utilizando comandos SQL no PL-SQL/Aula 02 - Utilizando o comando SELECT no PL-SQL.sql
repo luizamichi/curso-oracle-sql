@@ -54,7 +54,7 @@ DECLARE
   vAvg_Salary employees.salary%type;
   vSum_Salary employees.salary%type;
 BEGIN
-  SELECT ROUND(AVG(salary),2), ROUND(SUM(salary),2)
+  SELECT ROUND(AVG(salary), 2), ROUND(SUM(salary), 2)
     INTO vAvg_Salary, vSum_Salary
     FROM employees
    WHERE job_id = vJob_id;

@@ -21,7 +21,7 @@ BEGIN
   vNumero2 := 3000.4444;
   vMedia := ROUND((vNumero1 + vNumero2) / 2, 2);
 
-  DBMS_OUTPUT.PUT_LINE('Número 1 = ' || vNumero1); -- Impressão do primeiro número
-  DBMS_OUTPUT.PUT_LINE('Número 2 = ' || vNumero2); -- Impressão do segundo número
-  DBMS_OUTPUT.PUT_LINE('Média = ' || TO_CHAR(vMedia, '99G999G999D99')); -- Impressão da média calculada
+  DBMS_OUTPUT.PUT_LINE('Número 1: ' || vNumero1); -- Impressão do primeiro número
+  DBMS_OUTPUT.PUT_LINE('Número 2: ' || vNumero2); -- Impressão do segundo número
+  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(vMedia, '99G999G999D99')); -- Impressão da média calculada
 END;

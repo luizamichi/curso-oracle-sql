@@ -114,7 +114,7 @@ INSERT INTO locations (location_id, street_address, postal_code, city, state_pro
 (3100, 'Pieter Breughelstraat 837', '3029SK', 'Utrecht', 'Utrecht', 'NL');
 
 INSERT INTO locations (location_id, street_address, postal_code, city, state_province, country_id) VALUES
-(3200, 'Mariano Escobedo 9991', '11932', 'Mexico City', 'Distrito Federal,', 'MX');
+(3200, 'Mariano Escobedo 9991', '11932', 'Mexico City', 'Distrito Federal', 'MX');
 
 
 

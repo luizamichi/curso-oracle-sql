@@ -15,7 +15,7 @@ DECLARE
   vMedia NUMBER(11, 2);
 BEGIN
   vMedia := (vNumero1 + vNumero2) / 2;
-  DBMS_OUTPUT.PUT_LINE('Média = ' || vMedia);
+  DBMS_OUTPUT.PUT_LINE('Média: ' || vMedia);
 EXCEPTION
   WHEN OTHERS
   THEN

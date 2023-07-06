@@ -21,7 +21,7 @@ BEGIN
   vNumero2 := 4000;
   vMedia := (vNumero1 + vNumero2) / 2; -- Cálculo da média entre os dois números
 
-  DBMS_OUTPUT.PUT_LINE('Número 1 = ' || vNumero1); -- Impressão do primeiro número
-  DBMS_OUTPUT.PUT_LINE('Número 2 = ' || vNumero2); -- Impressão do segundo número
-  DBMS_OUTPUT.PUT_LINE('Média = ' || vMedia); -- Impressão da média calculada
+  DBMS_OUTPUT.PUT_LINE('Número 1: ' || vNumero1); -- Impressão do primeiro número
+  DBMS_OUTPUT.PUT_LINE('Número 2: ' || vNumero2); -- Impressão do segundo número
+  DBMS_OUTPUT.PUT_LINE('Média: ' || vMedia); -- Impressão da média calculada
 END;
