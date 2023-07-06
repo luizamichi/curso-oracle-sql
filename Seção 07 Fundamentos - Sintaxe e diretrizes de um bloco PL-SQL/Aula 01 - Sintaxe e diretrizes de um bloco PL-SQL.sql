@@ -17,8 +17,8 @@ DECLARE
   vNumero2 NUMBER(13, 2); -- Declaração de variável para o segundo número
   vMedia NUMBER(13, 2); -- Declaração de variável para receber a média calculada
 BEGIN
-  vNumero1 :=  8000;
-  vNumero2 :=  4000;
+  vNumero1 := 8000;
+  vNumero2 := 4000;
   vMedia := (vNumero1 + vNumero2) / 2; -- Cálculo da média entre os dois números
 
   DBMS_OUTPUT.PUT_LINE('Número 1 = ' || vNumero1); -- Impressão do primeiro número

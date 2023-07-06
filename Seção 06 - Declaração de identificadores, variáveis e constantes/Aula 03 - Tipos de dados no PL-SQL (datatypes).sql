@@ -32,7 +32,7 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo = ' || vCaracterTamFixo);
   DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável = ' || vCaracterTamVariavel);
 
-  IF  vBooleano = TRUE
+  IF vBooleano = TRUE
   THEN
     DBMS_OUTPUT.PUT_LINE('Booleano = ' || 'TRUE');
   ELSE

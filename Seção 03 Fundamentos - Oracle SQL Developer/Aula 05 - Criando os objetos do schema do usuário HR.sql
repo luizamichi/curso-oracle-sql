@@ -72,8 +72,8 @@ ON locations (location_id);
 
 ALTER TABLE locations
 ADD (
-    CONSTRAINT loc_id_pk PRIMARY KEY (location_id),
-    CONSTRAINT loc_c_id_fk FOREIGN KEY (country_id) REFERENCES countries (country_id)
+  CONSTRAINT loc_id_pk PRIMARY KEY (location_id),
+  CONSTRAINT loc_c_id_fk FOREIGN KEY (country_id) REFERENCES countries (country_id)
 );
 
 CREATE SEQUENCE locations_seq
