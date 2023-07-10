@@ -16,7 +16,7 @@ DECLARE
   vCaracterTamFixo CHAR(100) := 'Texto de tamanho fixo de até 32767 bytes';
   vCaracterTamVariavel VARCHAR2(100) := 'Texto de tamanho variável de até 32767 bytes';
   vBooleano BOOLEAN := TRUE;
-  vData DATE := sysdate;
+  vData DATE := SYSDATE;
   vLong LONG := 'Texto de tamanho variável de até 32760 bytes';
   vLongRaw LONG RAW := HEXTORAW('43' || '41' || '52');
   vRowId ROWID;

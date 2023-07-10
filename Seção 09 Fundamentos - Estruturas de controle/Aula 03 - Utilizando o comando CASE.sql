@@ -39,7 +39,8 @@ BEGIN
   COMMIT;
 END;
 
- -- Utilizando o comando CASE
+
+-- Utilizando o comando CASE
 
 SET SERVEROUTPUT ON
 ACCEPT pDepartment_id PROMPT 'Digite o ID do departamento: '

@@ -18,15 +18,15 @@ DECLARE
   efk_inexistente EXCEPTION;
   PRAGMA EXCEPTION_INIT(efk_inexistente, -2291);
 BEGIN
-  INSERT INTO employees (employee_id, first_name, last_name, phone_number, email, hire_date,job_id)
-                 VALUES (vemployee_id, vfirst_name, vlast_name, vphone_number, vemail, sysdate, vjob_id);
+  INSERT INTO employees (employee_id, first_name, last_name, phone_number, email, hire_date, job_id)
+                 VALUES (vemployee_id, vfirst_name, vlast_name, vphone_number, vemail, SYSDATE, vjob_id);
 EXCEPTION
   WHEN efk_inexistente
   THEN
     RAISE_APPLICATION_ERROR(-20003, 'Job inexistente!');
   WHEN OTHERS
   THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
 END;
 
 -- Forçando o erro para descobrir o código de erro a ser tratado

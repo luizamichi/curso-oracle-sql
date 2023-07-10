@@ -8,7 +8,7 @@
 --
 
 
--- Convençõe de codificação
+-- Convenções de codificação
 -----------------------------------------------------------------
 -- Categoria                             -- Convenção sugerida --
 -----------------------------------------------------------------
@@ -20,7 +20,7 @@
 -----------------------------------------------------------------
 
 
--- Convençõe de nomenclaturas
+-- Convenções de nomenclaturas
 --------------------------------------------
 -- Categoria       -- Convenção           --
 --------------------------------------------
@@ -43,7 +43,7 @@ DECLARE
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
 
-  -- Se voce referencia vBloco2 aqui ocorrerá erro
+  -- Se você referencia vBloco2 aqui ocorrerá erro
   DECLARE
     vBloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
@@ -52,5 +52,5 @@ BEGIN
   END;
 
   DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-  -- Se voce referencia vBloco2 aqui ocorrerá erro
+  -- Se você referencia vBloco2 aqui ocorrerá erro
 END;

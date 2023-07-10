@@ -11,7 +11,7 @@
 ----------------------------------------------------------------------------------------------------------
 -- Tipo      -- Descrição                                                                               --
 ----------------------------------------------------------------------------------------------------------
--- Implícito -- Cursores implícitos são declarados implicitamente para todos os comando DML e para      --
+-- Implícito -- Cursores implícitos são declarados implicitamente para todos os comandos DML e para     --
 --           -- comandos SELECT que retornam somente uma linha                                          --
 -- Explícito -- Para consultas que retornam mais de uma linha, um cursor explícito pode ser declarado   --
 --           -- e nomeado pelo programador e manipulado através de comandos específicos no bloco PL/SQL --

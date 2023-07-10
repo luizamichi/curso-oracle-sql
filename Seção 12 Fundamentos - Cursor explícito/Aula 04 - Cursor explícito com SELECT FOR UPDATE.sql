@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: 12 - Cursor explícito
--- Aula: 03 - Cursor explícito com SELECT FOR UPDATE
+-- Aula: 04 - Cursor explícito com SELECT FOR UPDATE
 -- Autor: Emílio Scudero
 -- Identificador: 047
 -- Tempo: 8m
