@@ -41,3 +41,26 @@ BEGIN
   vSalary := FNC_CONSULTA_SALARIO_EMPREGADO(vEmployee_id);
   DBMS_OUTPUT.PUT_LINE('Salário: ' || vSalary);
 END;
+
+
+-- Criando uma nova coluna para armazenamento de um código
+
+ALTER TABLE employees ADD employee_code VARCHAR2(10);
+
+
+-- Definindo um código dinâmico para o empregado
+
+BEGIN
+  UPDATE (
+    SELECT employees.employee_id, employees.employee_code
+      FROM employees
+  )
+     SET employee_code = TRIM(TO_CHAR(employees_seq.nextval, '0000000000'));
+  COMMIT;
+END;
+
+
+-- Consultando a nova coluna com os valores preenchidos
+
+SELECT employee_code, employees.*
+  FROM employees;

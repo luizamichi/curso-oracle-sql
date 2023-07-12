@@ -17,7 +17,7 @@ CREATE OR REPLACE PROCEDURE PRC_INSERE_EMPREGADO (
   pphone_number  IN VARCHAR2,
   phire_date     IN DATE DEFAULT SYSDATE,
   pjob_id        IN VARCHAR2,
-  pSALARY        IN NUMBER,
+  psalary        IN NUMBER,
   pcommicion_pct IN NUMBER,
   pmanager_id    IN NUMBER,
   pdepartment_id IN NUMBER
