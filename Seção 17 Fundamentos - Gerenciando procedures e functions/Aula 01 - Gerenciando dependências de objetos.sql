@@ -1,6 +1,6 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 16 - Gerenciando dependências de objetos
+-- Seção: 17 - Gerenciando dependências de objetos
 -- Aula: 01 - Gerenciando dependências de objetos
 -- Autor: Emílio Scudero
 -- Identificador: 062

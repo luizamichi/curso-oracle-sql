@@ -1,6 +1,6 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 16 - Gerenciando dependências de objetos
+-- Seção: 17 - Gerenciando dependências de objetos
 -- Aula: 02 - Utilizando as visões DEPTREE e IDEPTREE
 -- Autor: Emílio Scudero
 -- Identificador: 063
