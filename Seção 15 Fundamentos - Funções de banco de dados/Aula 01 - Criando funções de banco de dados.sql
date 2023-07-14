@@ -11,16 +11,16 @@
 -- Criando funções de banco de dados
 
 CREATE OR REPLACE FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (
-  pEmployee_id IN NUMBER
+  p_employee_id IN NUMBER
 ) RETURN NUMBER IS
-  vSalary employees.salary%TYPE;
+  v_salary employees.salary%TYPE;
 BEGIN
   SELECT salary
-    INTO vSalary
+    INTO v_salary
     FROM employees
-   WHERE employee_id = pEmployee_id;
+   WHERE employee_id = p_employee_id;
 
-  RETURN (vSalary);
+  RETURN (v_salary);
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
     RAISE_APPLICATION_ERROR(-20001, 'Empregado inexistente');
@@ -33,13 +33,13 @@ END;
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-ACCEPT PEMPLOYEE_ID PROMPT 'Digite o ID do empregado: '
+ACCEPT p_employee_id PROMPT 'Digite o ID do empregado: '
 DECLARE
-  vEmployee_id employees.employee_id%TYPE := &pEmployee_id;
-  vSalary      employees.salary%TYPE;
+  v_employee_id employees.employee_id%TYPE := &p_employee_id;
+  v_salary      employees.salary%TYPE;
 BEGIN
-  vSalary := FNC_CONSULTA_SALARIO_EMPREGADO(vEmployee_id);
-  DBMS_OUTPUT.PUT_LINE('Salário: ' || vSalary);
+  v_salary := FNC_CONSULTA_SALARIO_EMPREGADO(v_employee_id);
+  DBMS_OUTPUT.PUT_LINE('Salário: ' || v_salary);
 END;
 
 

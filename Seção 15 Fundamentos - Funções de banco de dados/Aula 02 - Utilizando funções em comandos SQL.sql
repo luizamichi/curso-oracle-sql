@@ -11,16 +11,16 @@
 -- Utilizando funções em comandos SQL
 
 CREATE OR REPLACE FUNCTION FNC_CONSULTA_TITULO_CARGO_EMPREGADO (
-  pJob_id IN jobs.job_id%TYPE
+  p_job_id IN jobs.job_id%TYPE
 ) RETURN VARCHAR2 IS
-  vJob_title jobs.job_title%TYPE;
+  v_job_title jobs.job_title%TYPE;
 BEGIN
   SELECT job_title
-    INTO vJob_title
+    INTO v_job_title
     FROM jobs
-   WHERE job_id = pJob_id;
+   WHERE job_id = p_job_id;
 
-  RETURN (vJob_title);
+  RETURN (v_job_title);
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
     RAISE_APPLICATION_ERROR(-20001, 'Job inexistente');

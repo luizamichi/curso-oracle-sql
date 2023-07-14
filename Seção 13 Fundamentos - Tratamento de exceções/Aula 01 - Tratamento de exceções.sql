@@ -12,24 +12,22 @@
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-ACCEPT pEmployee_id PROMPT 'Digite o ID do empregado: '
+ACCEPT p_employee_id PROMPT 'Digite o ID do empregado: '
 DECLARE
-  vFirst_name employees.first_name%TYPE;
-  vLast_name employees.last_name%TYPE;
-  vEmployee_id employees.employee_id%TYPE := &pEmployee_id;
+  v_first_name employees.first_name%TYPE;
+  v_last_name employees.last_name%TYPE;
+  v_employee_id employees.employee_id%TYPE := &p_employee_id;
 BEGIN
   SELECT first_name, last_name
-    INTO vfirst_name, vlast_name
+    INTO v_first_name, v_last_name
     FROM employees
-   WHERE employee_id = vEmployee_id;
+   WHERE employee_id = v_employee_id;
 
-  DBMS_OUTPUT.PUT_LINE('Empregado: ' || vfirst_name || ' ' || vlast_name);
+  DBMS_OUTPUT.PUT_LINE('Empregado: ' || v_first_name || ' ' || v_last_name);
 
 EXCEPTION
-  WHEN NO_DATA_FOUND
-  THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Empregado não encontrado, ID = ' || TO_CHAR(vEmployee_id));
-  WHEN OTHERS
-  THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+  WHEN NO_DATA_FOUND THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Empregado não encontrado, ID = ' || TO_CHAR(v_employee_id));
+  WHEN OTHERS THEN
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;

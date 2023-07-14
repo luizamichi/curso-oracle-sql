@@ -8,6 +8,14 @@
 --
 
 
+-- Definindo o Oracle's National Language Support da sessão
+
+ALTER SESSION SET NLS_LANGUAGE = American;
+ALTER SESSION SET NLS_TERRITORY = America;
+
+
+-- Remoção das tabelas (caso estejam criadas)
+
 DROP TABLE job_history CASCADE CONSTRAINTS;
 DROP TABLE departments CASCADE CONSTRAINTS;
 DROP TABLE employees CASCADE CONSTRAINTS;
@@ -20,14 +28,7 @@ DROP SEQUENCE departments_seq;
 DROP SEQUENCE employees_seq;
 
 
-ALTER SESSION SET NLS_LANGUAGE=American;
-ALTER SESSION SET NLS_TERRITORY=America;
-
-/*
-  Criação das tabelas
-*/
-
-/* Regions */
+-- Criação da tabela REGIONS
 
 CREATE TABLE regions (
   region_id NUMBER CONSTRAINT regions_id_nn NOT NULL,
@@ -41,7 +42,8 @@ ALTER TABLE regions
 ADD CONSTRAINT reg_id_pk
 PRIMARY KEY (region_id);
 
-/* Countries */
+
+-- Criação da tabela COUNTRIES
 
 CREATE TABLE countries (
   country_id CHAR(2) CONSTRAINT country_id_nn NOT NULL,
@@ -54,9 +56,10 @@ ORGANIZATION INDEX;
 ALTER TABLE countries
 ADD CONSTRAINT countr_reg_fk
 FOREIGN KEY (region_id)
-REFERENCES regions(region_id);
+REFERENCES regions (region_id);
 
-/* Locations */
+
+-- Criação da tabela LOCATIONS
 
 CREATE TABLE locations (
   location_id NUMBER(4),
@@ -83,7 +86,8 @@ CREATE SEQUENCE locations_seq
   NOCACHE
   NOCYCLE;
 
-/* Departments */
+
+-- Criação da tabela DEPARTMENTS
 
 CREATE TABLE departments (
   department_id NUMBER(4),
@@ -93,11 +97,12 @@ CREATE TABLE departments (
 );
 
 CREATE UNIQUE INDEX dept_id_pk
-ON departments (department_id) ;
+ON departments (department_id);
 
 ALTER TABLE departments
 ADD (
   CONSTRAINT dept_id_pk PRIMARY KEY (department_id),
+  CONSTRAINT dept_mgr_fk FOREIGN KEY (manager_id) REFERENCES employees (employee_id),
   CONSTRAINT dept_loc_fk FOREIGN KEY (location_id) REFERENCES locations (location_id)
 );
 
@@ -108,7 +113,8 @@ CREATE SEQUENCE departments_seq
   NOCACHE
   NOCYCLE;
 
-/* Jobs */
+
+-- Criação da tabela JOBS
 
 CREATE TABLE jobs (
   job_id VARCHAR2(10),
@@ -118,14 +124,15 @@ CREATE TABLE jobs (
 );
 
 CREATE UNIQUE INDEX job_id_pk
-ON jobs (job_id) ;
+ON jobs (job_id);
 
 ALTER TABLE jobs
 ADD (
-  CONSTRAINT job_id_pk PRIMARY KEY(job_id)
+  CONSTRAINT job_id_pk PRIMARY KEY (job_id)
 );
 
-/* Employees */
+
+-- Criação da tabela EMPLOYEES
 
 CREATE TABLE employees (
   employee_id NUMBER(6),
@@ -154,20 +161,14 @@ ADD (
   CONSTRAINT emp_manager_fk FOREIGN KEY (manager_id) REFERENCES employees (employee_id)
 );
 
-/* Alter Tables */
-
-ALTER TABLE departments
-ADD (
-  CONSTRAINT dept_mgr_fk FOREIGN KEY (manager_id) REFERENCES employees (employee_id)
-);
-
 CREATE SEQUENCE employees_seq
   START WITH 207
   INCREMENT BY 1
   NOCACHE
   NOCYCLE;
 
-/* Job History */
+
+-- Criação da tabela JOB HISTORY
 
 CREATE TABLE job_history (
   employee_id NUMBER(6) CONSTRAINT jhist_employee_nn NOT NULL,
@@ -188,6 +189,9 @@ ADD (
   CONSTRAINT jhist_emp_fk FOREIGN KEY (employee_id) REFERENCES employees,
   CONSTRAINT jhist_dept_fk FOREIGN KEY (department_id) REFERENCES departments
 );
+
+
+-- Criação da visualização EMPLOYEES DETAILS
 
 CREATE OR REPLACE VIEW emp_details_view
   (employee_id,

@@ -27,7 +27,6 @@ CONNECT BY PRIOR name = referenced_name AND type = referenced_type;
 
 
 -- Consultando dependências diretas e indiretas dos objetos de todos schemas utilizando a visão DBA_DEPENDENCIES
-
 -- Conecte-se como SYS
 
 DESC DBA_DEPENDENCIES

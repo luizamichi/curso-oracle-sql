@@ -27,10 +27,11 @@
 --           -- m..n da collection                                                            --                                   --
 -------------------------------------------------------------------------------------------------------------------------------------
 
+
 SET SERVEROUTPUT ON
 SET VERIFY OFF
 DECLARE
-  TYPE employees_table_type IS TABLE OF employees%rowtype;
+  TYPE employees_table_type IS TABLE OF employees%ROWTYPE;
   employees_table employees_table_type := employees_table_type();
 BEGIN
   SELECT *

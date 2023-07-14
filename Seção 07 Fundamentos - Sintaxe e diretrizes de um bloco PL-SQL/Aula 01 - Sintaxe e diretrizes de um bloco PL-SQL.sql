@@ -13,15 +13,15 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vNumero1 NUMBER(13, 2); -- Declaração de variável para o primeiro número
-  vNumero2 NUMBER(13, 2); -- Declaração de variável para o segundo número
-  vMedia NUMBER(13, 2); -- Declaração de variável para receber a média calculada
+  v_numero_1 NUMBER(13, 2); -- Declaração de variável para o primeiro número
+  v_numero_2 NUMBER(13, 2); -- Declaração de variável para o segundo número
+  v_media NUMBER(13, 2); -- Declaração de variável para receber a média calculada
 BEGIN
-  vNumero1 := 8000;
-  vNumero2 := 4000;
-  vMedia := (vNumero1 + vNumero2) / 2; -- Cálculo da média entre os dois números
+  v_numero_1 := 8000;
+  v_numero_2 := 4000;
+  v_media := (v_numero_1 + v_numero_2) / 2; -- Cálculo da média entre os dois números
 
-  DBMS_OUTPUT.PUT_LINE('Número 1: ' || vNumero1); -- Impressão do primeiro número
-  DBMS_OUTPUT.PUT_LINE('Número 2: ' || vNumero2); -- Impressão do segundo número
-  DBMS_OUTPUT.PUT_LINE('Média: ' || vMedia); -- Impressão da média calculada
+  DBMS_OUTPUT.PUT_LINE('Número 1: ' || TO_CHAR(v_numero_1)); -- Impressão do primeiro número
+  DBMS_OUTPUT.PUT_LINE('Número 2: ' || TO_CHAR(v_numero_2)); -- Impressão do segundo número
+  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(v_media)); -- Impressão da média calculada
 END;

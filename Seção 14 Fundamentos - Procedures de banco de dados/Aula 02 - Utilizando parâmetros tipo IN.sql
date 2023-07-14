@@ -9,14 +9,14 @@
 
 
 CREATE OR REPLACE PROCEDURE PRC_AUMENTA_SALARIO_EMPREGADO (
-  pEmployee_id IN NUMBER,
-  pPercentual IN NUMBER
+  p_employee_id IN NUMBER,
+  p_percentual IN NUMBER
 ) IS
 -- Nenhuma váriável declarada
 BEGIN
   UPDATE employees
-     SET salary = salary * (1 + pPercentual / 100)
-   WHERE employee_id = pEmployee_id;
+     SET salary = salary * (1 + p_percentual / 100)
+   WHERE employee_id = p_employee_id;
 
 EXCEPTION
   WHEN OTHERS THEN

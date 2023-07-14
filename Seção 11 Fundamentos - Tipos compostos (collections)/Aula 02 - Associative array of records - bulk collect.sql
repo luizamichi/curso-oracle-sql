@@ -11,8 +11,7 @@
 SET SERVEROUTPUT ON
 SET VERIFY OFF
 DECLARE
-  TYPE employees_table_type IS TABLE OF employees%rowtype
-  INDEX BY BINARY_INTEGER; -- Type Associative Array
+  TYPE employees_table_type IS TABLE OF employees%ROWTYPE INDEX BY BINARY_INTEGER; -- Type Associative Array
   employees_table employees_table_type;
 BEGIN
   SELECT *
@@ -30,13 +29,13 @@ BEGIN
   END LOOP;
 END;
 
+
 -- Utilizando o comando FORALL, exemplo aumentando o salário dos 10 funcionários de menor salário
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
 DECLARE
-  TYPE employees_table_type IS TABLE OF employees%rowtype
-  INDEX BY BINARY_INTEGER;
+  TYPE employees_table_type IS TABLE OF employees%ROWTYPE INDEX BY BINARY_INTEGER;
   employees_table employees_table_type;
 BEGIN
   SELECT *
@@ -56,8 +55,7 @@ BEGIN
     employees_table(i).salary := employees_table(i).salary * 1.1;
   END LOOP;
 
-  IF employees_table.count >= 10
-  THEN
+  IF employees_table.count >= 10 THEN
     -- Altera o salário dos 10 primeiros funcionários
     FORALL i IN 1..10
     UPDATE employees

@@ -10,17 +10,18 @@
 
 -- Criando um PL/SQL Record utilizando atributo %ROWTYPE
 
+CLEAR SCREEN
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-ACCEPT pEmployee_id PROMPT 'Digite o ID do empregado: '
+ACCEPT p_employee_id PROMPT 'Digite o ID do empregado: '
 DECLARE
-  employee_record employees%rowtype;
-  vEmployee_id employees.employee_id%type := &pEmployee_id;
+  employee_record employees%ROWTYPE;
+  v_employee_id employees.employee_id%TYPE := &p_employee_id;
 BEGIN
   SELECT *
     INTO employee_record
     FROM employees
-   WHERE employee_id = vEmployee_id;
+   WHERE employee_id = v_employee_id;
 
   DBMS_OUTPUT.PUT_LINE(employee_record.employee_id || ' - ' ||
                        employee_record.first_name || ' - ' ||

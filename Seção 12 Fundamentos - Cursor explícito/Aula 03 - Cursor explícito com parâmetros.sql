@@ -7,6 +7,7 @@
 -- Tempo: 5m
 --
 
+
 -- Cursor FOR LOOP com parâmetros
 
 SET SERVEROUTPUT ON
@@ -15,14 +16,13 @@ ALTER SESSION SET NLS_LANGUAGE = 'BRAZILIAN PORTUGUESE';
 ALTER SESSION SET NLS_TERRITORY = 'BRAZIL';
 ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.';
 DECLARE
-  CURSOR employees_cursor(pdepartment_id NUMBER,
-                          pjob_id VARCHAR2) IS
+  CURSOR employees_cursor (p_department_id IN NUMBER, p_job_id IN VARCHAR2) IS
     SELECT *
       FROM employees
-     WHERE department_id = pdepartment_id
-       AND job_id = pjob_id;
+     WHERE department_id = p_department_id
+       AND job_id = p_job_id;
 BEGIN
-  FOR employees_record IN employees_cursor (60, 'IT_PROG')
+  FOR employees_record IN employees_cursor(60, 'IT_PROG')
   LOOP
     DBMS_OUTPUT.PUT_LINE(employees_record.employee_id || ' - ' ||
                          employees_record.first_name || ' ' ||

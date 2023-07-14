@@ -11,32 +11,32 @@
 -- Utilizando parâmetros tipo OUT
 
 CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
-  pemployee_id    IN NUMBER,
-  pfirst_name     OUT VARCHAR2,
-  plast_name      OUT VARCHAR2,
-  pemail          OUT VARCHAR2,
-  pphone_number   OUT VARCHAR2,
-  phire_date      OUT DATE,
-  pjob_id         OUT VARCHAR2,
-  psalary         OUT NUMBER,
-  pcommission_pct OUT NUMBER,
-  pmanager_id     OUT NUMBER,
-  pdepartment_id  OUT NUMBER
+  p_employee_id    IN NUMBER,
+  p_first_name     OUT VARCHAR2,
+  p_last_name      OUT VARCHAR2,
+  p_email          OUT VARCHAR2,
+  p_phone_number   OUT VARCHAR2,
+  p_hire_date      OUT DATE,
+  p_job_id         OUT VARCHAR2,
+  p_salary         OUT NUMBER,
+  p_commission_pct OUT NUMBER,
+  p_manager_id     OUT NUMBER,
+  p_department_id  OUT NUMBER
 ) IS
 -- Nenhuma variável declarada
 BEGIN
   SELECT first_name, last_name, email, phone_number, hire_date,
          job_id, salary, commission_pct, manager_id, department_id
-    INTO pfirst_name, plast_name, pemail, pphone_number, phire_date,
-         pjob_id, psalary, pcommission_pct, pmanager_id, pdepartment_id
+    INTO p_first_name, p_last_name, p_email, p_phone_number, p_hire_date,
+         p_job_id, p_salary, p_commission_pct, p_manager_id, p_department_id
     FROM employees
-   WHERE employee_id = pemployee_id;
+   WHERE employee_id = p_employee_id;
 
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || PEMPLOYEE_ID);
+    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || p_employee_id);
   WHEN OTHERS THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
 
 
@@ -63,31 +63,31 @@ END;
 -- Utilizando parâmetros tipo OUT com opção NOCOPY
 
 CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
-  pemployee_id    IN NUMBER,
-  pfirst_name     OUT NOCOPY VARCHAR2,
-  plast_name      OUT NOCOPY VARCHAR2,
-  pemail          OUT NOCOPY VARCHAR2,
-  pphone_number   OUT NOCOPY VARCHAR2,
-  phire_date      OUT NOCOPY DATE,
-  pjob_id         OUT NOCOPY VARCHAR2,
-  psalary         OUT NOCOPY NUMBER,
-  pcommission_pct OUT NOCOPY NUMBER,
-  pmanager_id     OUT NOCOPY NUMBER,
-  pdepartment_id  OUT NOCOPY NUMBER
+  p_employee_id    IN NUMBER,
+  p_first_name     OUT NOCOPY VARCHAR2,
+  p_last_name      OUT NOCOPY VARCHAR2,
+  p_email          OUT NOCOPY VARCHAR2,
+  p_phone_number   OUT NOCOPY VARCHAR2,
+  p_hire_date      OUT NOCOPY DATE,
+  p_job_id         OUT NOCOPY VARCHAR2,
+  p_salary         OUT NOCOPY NUMBER,
+  p_commission_pct OUT NOCOPY NUMBER,
+  p_manager_id     OUT NOCOPY NUMBER,
+  p_department_id  OUT NOCOPY NUMBER
 ) IS
 BEGIN
   SELECT first_name, last_name, email, phone_number, hire_date,
          job_id, salary, commission_pct, manager_id, department_id
-    INTO pfirst_name, plast_name, pemail, pphone_number, phire_date,
-         pjob_id, psalary, pcommission_pct, pmanager_id, pdepartment_id
+    INTO p_first_name, p_last_name, p_email, p_phone_number, p_hire_date,
+         p_job_id, p_salary, p_commission_pct, p_manager_id, p_department_id
     FROM employees
-   WHERE employee_id = pemployee_id;
+   WHERE employee_id = p_employee_id;
 
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || PEMPLOYEE_ID);
+    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || p_employee_id);
   WHEN OTHERS THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
 
 

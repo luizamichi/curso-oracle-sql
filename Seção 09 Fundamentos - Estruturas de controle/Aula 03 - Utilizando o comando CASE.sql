@@ -11,31 +11,28 @@
 -- Utilizando o comando CASE
 
 SET SERVEROUTPUT ON
-ACCEPT pDepartment_id PROMPT 'Digite o ID do departamento: '
+ACCEPT p_department_id PROMPT 'Digite o ID do departamento: '
 DECLARE
-  vPercentual NUMBER(3);
-  vDepartment_id employees.employee_id%type := &pDepartment_id;
+  v_percentual NUMBER(3);
+  v_department_id employees.employee_id%TYPE := &p_department_id;
 BEGIN
-  CASE vDepartment_id
-  WHEN 80
-  THEN
-    vPercentual := 10; -- Sales
-  WHEN 20
-  THEN
-    vPercentual := 15; -- Marketing
-  WHEN 60
-  THEN
-    vPercentual := 20; -- IT
+  CASE v_department_id
+  WHEN 80 THEN
+    v_percentual := 10; -- Sales
+  WHEN 20 THEN
+    v_percentual := 15; -- Marketing
+  WHEN 60 THEN
+    v_percentual := 20; -- IT
   ELSE
-    vPercentual := 5;
+    v_percentual := 5;
   END CASE;
 
-  DBMS_OUTPUT.PUT_LINE('ID do departamento: ' || vDepartment_id);
-  DBMS_OUTPUT.PUT_LINE('Percentual: ' || vPercentual);
+  DBMS_OUTPUT.PUT_LINE('ID do departamento: ' || v_department_id);
+  DBMS_OUTPUT.PUT_LINE('Percentual: ' || v_percentual);
 
   UPDATE employees
-     SET salary = salary * (1 + vPercentual / 100)
-   WHERE department_id = &pDepartment_id;
+     SET salary = salary * (1 + v_percentual / 100)
+   WHERE department_id = v_department_id;
   COMMIT;
 END;
 
@@ -43,30 +40,27 @@ END;
 -- Utilizando o comando CASE
 
 SET SERVEROUTPUT ON
-ACCEPT pDepartment_id PROMPT 'Digite o ID do departamento: '
+ACCEPT p_department_id PROMPT 'Digite o ID do departamento: '
 DECLARE
-  vPercentual NUMBER(3);
-  vDepartment_id employees.employee_id%type := &pDepartment_id;
+  v_percentual NUMBER(3);
+  v_department_id employees.employee_id%TYPE := &p_department_id;
 BEGIN
   CASE
-  WHEN vDepartment_id = 80
-  THEN
-    vPercentual := 10; -- Sales
-  WHEN vDepartment_id = 20
-  THEN
-    vPercentual := 15; -- Marketing
-  WHEN vDepartment_id = 60
-  THEN
-    vPercentual := 20; -- IT
+  WHEN v_department_id = 80 THEN
+    v_percentual := 10; -- Sales
+  WHEN v_department_id = 20 THEN
+    v_percentual := 15; -- Marketing
+  WHEN v_department_id = 60 THEN
+    v_percentual := 20; -- IT
   ELSE
-    vPercentual := 5;
+    v_percentual := 5;
   END CASE;
 
-  DBMS_OUTPUT.PUT_LINE('ID do departamento: ' || vDepartment_id);
-  DBMS_OUTPUT.PUT_LINE('Percentual: ' || vPercentual);
+  DBMS_OUTPUT.PUT_LINE('ID do departamento: ' || v_department_id);
+  DBMS_OUTPUT.PUT_LINE('Percentual: ' || v_percentual);
 
   UPDATE employees
-     SET salary = salary * (1 + vPercentual / 100)
-   WHERE department_id = &pDepartment_id;
-   -- COMMIT;
+     SET salary = salary * (1 + v_percentual / 100)
+   WHERE department_id = v_department_id;
+  -- COMMIT;
 END;

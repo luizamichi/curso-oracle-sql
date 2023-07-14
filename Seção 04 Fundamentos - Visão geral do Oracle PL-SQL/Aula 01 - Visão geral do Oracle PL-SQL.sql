@@ -8,15 +8,17 @@
 --
 
 
--- Bloco anônimo - Exemplo
+-- Exemplo de definição de um bloco de código anônimo no PL/SQL
 
 SET SERVEROUTPUT ON
 DECLARE
-  vTexto VARCHAR2(100) := 'Seja bem vindo ao PL/SQL';
+  -- Declaração de variáveis
+  v_texto VARCHAR2(100) := 'Seja bem-vindo ao PL/SQL';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE(vTexto);
+  -- Ativação da saída do servidor
+  DBMS_OUTPUT.PUT_LINE(v_texto);
 EXCEPTION
-  WHEN OTHERS
-  THEN
-    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || SQLERRM);
+  WHEN OTHERS THEN
+    -- Manipulação de erros
+    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;

@@ -33,40 +33,40 @@ END;
 SET SERVEROUTPUT ON
 SET VERIFY OFF
 DECLARE
-  vemployee_id    NUMBER := 100;
-  vfirst_name     VARCHAR2(200);
-  vlast_name      VARCHAR2(200);
-  vemail          VARCHAR2(200);
-  vphone_number   VARCHAR2(200);
-  vhire_date      DATE;
-  vjob_id         VARCHAR2(200);
-  vsalary         NUMBER;
-  vcommission_pct NUMBER;
-  vmanager_id     NUMBER;
-  vdepartment_id  NUMBER;
+  v_employee_id    NUMBER := 100;
+  v_first_name     VARCHAR2(200);
+  v_last_name      VARCHAR2(200);
+  v_email          VARCHAR2(200);
+  v_phone_number   VARCHAR2(200);
+  v_hire_date      DATE;
+  v_job_id         VARCHAR2(200);
+  v_salary         NUMBER;
+  v_commission_pct NUMBER;
+  v_manager_id     NUMBER;
+  v_department_id  NUMBER;
 BEGIN
   PRC_CONSULTA_EMPREGADO(
-    pemployee_id => vemployee_id,
-    pfirst_name => vfirst_name,
-    plast_name => vlast_name,
-    pemail => vemail,
-    pphone_number => vphone_number,
-    phire_date => vhire_date,
-    pjob_id => vjob_id,
-    psalary => vsalary,
-    pcommission_pct => vcommission_pct,
-    pmanager_id => vmanager_id,
-    pdepartment_id => vdepartment_id
+    p_employee_id => v_employee_id,
+    p_first_name => v_first_name,
+    p_last_name => v_last_name,
+    p_email => v_email,
+    p_phone_number => v_phone_number,
+    p_hire_date => v_hire_date,
+    p_job_id => v_job_id,
+    p_salary => v_salary,
+    p_commission_pct => v_commission_pct,
+    p_manager_id => v_manager_id,
+    p_department_id => v_department_id
   );
 
-  DBMS_OUTPUT.PUT_LINE('PFIRST_NAME: ' || vfirst_name);
-  DBMS_OUTPUT.PUT_LINE('PLAST_NAME: ' || vlast_name);
-  DBMS_OUTPUT.PUT_LINE('PEMAIL: ' || vemail);
-  DBMS_OUTPUT.PUT_LINE('PPHONE_NUMBER: ' || vphone_number);
-  DBMS_OUTPUT.PUT_LINE('PHIRE_DATE: ' || vhire_date);
-  DBMS_OUTPUT.PUT_LINE('PJOB_ID: ' || vjob_id);
-  DBMS_OUTPUT.PUT_LINE('PSALARY: ' || vsalary);
-  DBMS_OUTPUT.PUT_LINE('PCOMMISSION_PCT: ' || vcommission_pct);
-  DBMS_OUTPUT.PUT_LINE('PMANAGER_ID: ' || vmanager_id);
-  DBMS_OUTPUT.PUT_LINE('PDEPARTMENT_ID: ' || vdepartment_id);
+  DBMS_OUTPUT.PUT_LINE('P_FIRST_NAME: ' || v_first_name);
+  DBMS_OUTPUT.PUT_LINE('P_LAST_NAME: ' || v_last_name);
+  DBMS_OUTPUT.PUT_LINE('P_EMAIL: ' || v_email);
+  DBMS_OUTPUT.PUT_LINE('P_PHONE_NUMBER: ' || v_phone_number);
+  DBMS_OUTPUT.PUT_LINE('P_HIRE_DATE: ' || v_hire_date);
+  DBMS_OUTPUT.PUT_LINE('P_JOB_ID: ' || v_job_id);
+  DBMS_OUTPUT.PUT_LINE('P_SALARY: ' || v_salary);
+  DBMS_OUTPUT.PUT_LINE('P_COMMISSION_PCT: ' || v_commission_pct);
+  DBMS_OUTPUT.PUT_LINE('P_MANAGER_ID: ' || v_manager_id);
+  DBMS_OUTPUT.PUT_LINE('P_DEPARTMENT_ID: ' || v_department_id);
 END;

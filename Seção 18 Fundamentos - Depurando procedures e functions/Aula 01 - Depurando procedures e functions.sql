@@ -46,7 +46,7 @@ GRANT DEBUG CONNECT SESSION, DEBUG ANY PROCEDURE TO hr;
 
 /*
   Conectando ao banco de dados hr_XEPDB1.
-  Executando PL/SQL: CALL DBMS_DEBUG_JDWP.CONNECT_TCP( '127.0.0.1', '52100' )
+  Executando PL/SQL: CALL DBMS_DEBUG_JDWP.CONNECT_TCP('127.0.0.1', '52100')
   ORA-24247: acesso à rede negado pela ACL (access control list)
   ORA-06512: em "SYS.DBMS_DEBUG_JDWP", line 68
   ORA-06512: em line 1

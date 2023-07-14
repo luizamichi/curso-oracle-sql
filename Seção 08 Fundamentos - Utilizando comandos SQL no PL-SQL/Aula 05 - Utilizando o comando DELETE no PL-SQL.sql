@@ -10,9 +10,9 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vEmployee_id employees.employee_id%type := 207;
+  v_employee_id employees.employee_id%TYPE := 207;
 BEGIN
-  DELETE FROM employees
-   WHERE employee_id = vEmployee_id;
+  DELETE FROM employees               -- DELETE employees -- Palavra FROM é opcional
+   WHERE employee_id = v_employee_id; --  WHERE employee_id = v_employee_id;
   COMMIT;
 END;

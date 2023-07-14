@@ -12,30 +12,38 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vPi CONSTANT NUMBER(38, 15) := 3.141592653589793;
+  -- Declaração de constante
+  C_PI CONSTANT NUMBER(38, 15) := 3.141592653589793;
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Pi: ' || vPi);
+  -- Saída do valor de Pi
+  DBMS_OUTPUT.PUT_LINE('Pi: ' || C_PI);
 END;
+
 
 -- Declarando constantes do tipo CHAR e VARCHAR2
 
 SET SERVEROUTPUT ON
 DECLARE
-  vCaracterTamFixo CONSTANT CHAR(2) := 'RS';
-  vCaracterTamVariavel CONSTANT VARCHAR2(100) := 'Porto Alegre, RS';
+  -- Declaração de constantes
+  C_CARACTER_TAM_FIXO CONSTANT CHAR(2) := 'RS';
+  C_CARACTER_TAM_VARIAVEL CONSTANT VARCHAR2(100) := 'Porto Alegre, RS';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo: ' || vCaracterTamFixo);
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável: ' || vCaracterTamVariavel);
+  -- Saída das strings
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo: ' || C_CARACTER_TAM_FIXO);
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável: ' || C_CARACTER_TAM_VARIAVEL);
 END;
+
 
 -- Declarando constantes do tipo DATE
 
 SET SERVEROUTPUT ON
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YY HH24:MI:SS';
 DECLARE
-  vData1 CONSTANT DATE := '29/04/20';
-  vData2 CONSTANT DATE := '29/04/2020';
+  -- Declaração de constantes
+  C_DATA1 CONSTANT DATE := '29/04/20';
+  C_DATA2 CONSTANT DATE := '29/04/2020';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Data 1: ' || vData1);
-  DBMS_OUTPUT.PUT_LINE('Data 2: ' || vData2);
+  -- Saída das datas
+  DBMS_OUTPUT.PUT_LINE('Data 1: ' || TO_CHAR(C_DATA1, 'DD/MM/YY HH24:MI:SS'));
+  DBMS_OUTPUT.PUT_LINE('Data 2: ' || TO_CHAR(C_DATA2, 'DD/MM/YY HH24:MI:SS'));
 END;

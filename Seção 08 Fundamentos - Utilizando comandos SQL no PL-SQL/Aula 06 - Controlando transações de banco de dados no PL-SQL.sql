@@ -10,22 +10,22 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vEmployee_id employees.employee_id%type := 150;
+  v_employee_id employees.employee_id%TYPE := 150;
 BEGIN
   UPDATE employees
      SET salary = 15000
-   WHERE employee_id = vEmployee_id;
+   WHERE employee_id = v_employee_id;
   COMMIT;
 END;
 
 
 SET SERVEROUTPUT ON
 DECLARE
-  vEmployee_id employees.employee_id%type := 150;
+  v_employee_id employees.employee_id%TYPE := 150;
 BEGIN
   UPDATE employees
      SET salary = 20000
-   WHERE employee_id = vEmployee_id;
+   WHERE employee_id = v_employee_id;
   ROLLBACK;
 END;
 

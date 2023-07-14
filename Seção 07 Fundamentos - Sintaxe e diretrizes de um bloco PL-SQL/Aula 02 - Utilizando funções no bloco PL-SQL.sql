@@ -13,15 +13,15 @@
 SET SERVEROUTPUT ON
 ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.';
 DECLARE
-  vNumero1 NUMBER(13, 2); -- Declaração de variável para o primeiro número
-  vNumero2 NUMBER(13, 2); -- Declaração de variável para o segundo número
-  vMedia NUMBER(13, 2); -- Declaração de variável para a média
+  v_numero_1 NUMBER(13, 2); -- Declaração de variável para o primeiro número
+  v_numero_2 NUMBER(13, 2); -- Declaração de variável para o segundo número
+  v_media NUMBER(13, 2); -- Declaração de variável para a média
 BEGIN
-  vNumero1 := 5000.8888;
-  vNumero2 := 3000.4444;
-  vMedia := ROUND((vNumero1 + vNumero2) / 2, 2);
+  v_numero_1 := 5000.8888;
+  v_numero_2 := 3000.4444;
+  v_media := ROUND((v_numero_1 + v_numero_2) / 2, 2);
 
-  DBMS_OUTPUT.PUT_LINE('Número 1: ' || vNumero1); -- Impressão do primeiro número
-  DBMS_OUTPUT.PUT_LINE('Número 2: ' || vNumero2); -- Impressão do segundo número
-  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(vMedia, '99G999G999D99')); -- Impressão da média calculada
+  DBMS_OUTPUT.PUT_LINE('Número 1: ' || v_numero_1); -- Impressão do primeiro número
+  DBMS_OUTPUT.PUT_LINE('Número 2: ' || v_numero_2); -- Impressão do segundo número
+  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(v_media, '99G999G999D99')); -- Impressão da média calculada
 END;

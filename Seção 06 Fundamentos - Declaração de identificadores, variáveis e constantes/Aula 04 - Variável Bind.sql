@@ -11,15 +11,14 @@
 -- Utilizando variável bind
 
 SET SERVEROUTPUT ON
-VARIABLE gMedia NUMBER
+VARIABLE g_media NUMBER
 DECLARE
-  vNumero1 NUMBER(11, 2) := 2000;
-  vNumero2 NUMBER(11, 2) := 5000;
+  v_numero1 NUMBER(11, 2) := 2000;
+  v_numero2 NUMBER(11, 2) := 5000;
 BEGIN
-  :gMedia := (vNumero1 + vNumero2) / 2;
-  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(:gMedia));
+  :g_media := (v_numero1 + v_numero2) / 2;
+  DBMS_OUTPUT.PUT_LINE('Média: ' || TO_CHAR(:g_media));
 EXCEPTION
-  WHEN OTHERS
-  THEN
-    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || SQLERRM);
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;

@@ -22,30 +22,32 @@
 -- 8     -- OR                                                          --
 --------------------------------------------------------------------------
 
+
 -- Operadores PL/SQL - Com erro no cálculo devido ao mal uso da regra de precedência
 
 SET SERVEROUTPUT ON
 DECLARE
-  vNota1 NUMBER(11, 2) := 7.0;
-  vNota2 NUMBER(11, 2) := 6.0;
-  vNota3 NUMBER(11, 2) := 9.0;
-  vNota4 NUMBER(11, 2) := 6.0;
-  vMedia NUMBER(11, 2);
+  v_nota1 NUMBER(11, 2) := 7.0;
+  v_nota2 NUMBER(11, 2) := 6.0;
+  v_nota3 NUMBER(11, 2) := 9.0;
+  v_nota4 NUMBER(11, 2) := 6.0;
+  v_media NUMBER(11, 2);
 BEGIN
-  vMedia := vNota1 + vNota2 + vNota3 + vNota4 / 4;
-  DBMS_OUTPUT.PUT_LINE('Média: ' || vMedia);
+  v_media := v_nota1 + v_nota2 + v_nota3 + v_nota4 / 4;
+  DBMS_OUTPUT.PUT_LINE('Média: ' || v_media);
 END;
+
 
 -- Corrigindo o cálculo da média sobrepondo a regra de precedência utilizando parênteses
 
 SET SERVEROUTPUT ON
 DECLARE
-  vNota1 NUMBER(11, 2) := 7.0;
-  vNota2 NUMBER(11, 2) := 6.0;
-  vNota3 NUMBER(11, 2) := 9.0;
-  vNota4 NUMBER(11, 2) := 6.0;
-  vMedia NUMBER(11, 2);
+  v_nota1 NUMBER(11, 2) := 7.0;
+  v_nota2 NUMBER(11, 2) := 6.0;
+  v_nota3 NUMBER(11, 2) := 9.0;
+  v_nota4 NUMBER(11, 2) := 6.0;
+  v_media NUMBER(11, 2);
 BEGIN
-  vMedia := (vNota1 + vNota2 + vNota3 + vNota4) / 4;
-  DBMS_OUTPUT.PUT_LINE('Média: ' || vMedia);
+  v_media := (v_nota1 + v_nota2 + v_nota3 + v_nota4) / 4;
+  DBMS_OUTPUT.PUT_LINE('Média: ' || v_media);
 END;

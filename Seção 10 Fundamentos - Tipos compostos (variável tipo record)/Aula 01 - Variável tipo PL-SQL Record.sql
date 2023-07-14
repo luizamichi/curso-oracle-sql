@@ -10,23 +10,26 @@
 
 -- Criando um PL/SQL Record
 
+CLEAR SCREEN
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-ACCEPT pEmployee_id PROMPT 'Digite o ID do empregado: '
+ACCEPT p_employee_id PROMPT 'Digite o ID do empregado: '
 DECLARE
-  TYPE employee_record_type IS RECORD
-         (employee_id employees.employee_id%type,
-          first_name employees.first_name%type,
-          last_name employees.last_name%type,
-          email employees.email%type,
-          phone_number employees.phone_number%type);
+  TYPE employee_record_type IS
+    RECORD (
+      employee_id employees.employee_id%TYPE,
+      first_name employees.first_name%TYPE,
+      last_name employees.last_name%TYPE,
+      email employees.email%TYPE,
+      phone_number employees.phone_number%TYPE
+    );
 
   employee_record employee_record_type;
 BEGIN
   SELECT employee_id, first_name, last_name, email, phone_number
     INTO employee_record
     FROM employees
-   WHERE employee_id = &pEmployee_id;
+   WHERE employee_id = &p_employee_id;
 
   DBMS_OUTPUT.PUT_LINE(employee_record.employee_id || ' - ' ||
                        employee_record.first_name || ' - ' ||

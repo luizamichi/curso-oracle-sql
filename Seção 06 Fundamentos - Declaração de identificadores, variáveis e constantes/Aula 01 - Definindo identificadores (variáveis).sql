@@ -12,30 +12,42 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vNumero NUMBER(11, 2) := 1200.50;
+  -- Declaração de variável
+  v_numero NUMBER(11, 2) := 1200.50;
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Número (NUMBER): ' || vNumero);
+  -- Saída do número
+  DBMS_OUTPUT.PUT_LINE('Número (NUMBER): ' || v_numero);
 END;
+
 
 -- Declarando variáveis do tipo CHAR e VARCHAR2
 
 SET SERVEROUTPUT ON
 DECLARE
-  vCaracterTamFixo CHAR(2) := 'RS';
-  vCaracterTamVariavel VARCHAR2(100) := 'Porto Alegre, RS';
+  -- Declaração de variáveis
+  v_caracter_tam_fixo CHAR(2) := 'RS';
+  v_caracter_tam_variavel VARCHAR2(100) := 'Porto Alegre, RS';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo (CHAR): ' || vCaracterTamFixo);
-  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável (VARCHAR): ' || vCaracterTamVariavel);
+  -- Saída das strings
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho fixo (CHAR): ' || v_caracter_tam_fixo);
+  DBMS_OUTPUT.PUT_LINE('String - Caracteres de tamanho variável (VARCHAR): ' || v_caracter_tam_variavel);
 END;
+
 
 -- Declarando variáveis do tipo DATE
 
 SET SERVEROUTPUT ON
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YY HH24:MI:SS';
 DECLARE
-  vData1 DATE := '29/04/20';
-  vData2 DATE := '29/04/2020';
+  -- Declaração de variáveis
+  v_data1 DATE := '29/04/20';
+  v_data2 DATE := '29/04/2020';
+  v_data3 DATE := TO_DATE('29/04/20', 'DD/MM/YY');
+  v_data4 DATE := TO_DATE('29/04/2020', 'DD/MM/YYYY');
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Data 1 (DATE): ' || vData1);
-  DBMS_OUTPUT.PUT_LINE('Data 2 (DATE): ' || vData2);
+  -- Saída das datas
+  DBMS_OUTPUT.PUT_LINE('Data 1 (DATE): ' || TO_CHAR(v_data1, 'DD/MM/YY HH24:MI:SS'));
+  DBMS_OUTPUT.PUT_LINE('Data 2 (DATE): ' || TO_CHAR(v_data2, 'DD/MM/YY HH24:MI:SS'));
+  DBMS_OUTPUT.PUT_LINE('Data 3 (DATE): ' || TO_CHAR(v_data3, 'DD/MM/YY HH24:MI:SS'));
+  DBMS_OUTPUT.PUT_LINE('Data 4 (DATE): ' || TO_CHAR(v_data4, 'DD/MM/YY HH24:MI:SS'));
 END;

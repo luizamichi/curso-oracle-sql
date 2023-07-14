@@ -9,15 +9,15 @@
 
 
 SET SERVEROUTPUT ON
-ACCEPT pLimite PROMPT 'Digite o valor do limite: '
+ACCEPT p_limite PROMPT 'Digite o valor do limite: '
 DECLARE
-  vNumero NUMBER(38) := 1;
-  vLimite NUMBER(38) := &pLimite;
+  v_numero NUMBER(38) := 1;
+  v_limite NUMBER(38) := &p_limite;
 BEGIN
   -- Imprimindo números de 1 até o limite
   LOOP
-    DBMS_OUTPUT.PUT_LINE('Número: ' || TO_CHAR(vNumero));
-    EXIT WHEN vNumero = vLimite;
-    vNumero := vNumero + 1;
+    DBMS_OUTPUT.PUT_LINE('Número: ' || TO_CHAR(v_numero));
+    EXIT WHEN v_numero = v_limite;
+    v_numero := v_numero + 1;
   END LOOP;
 END;

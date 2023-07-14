@@ -11,25 +11,26 @@
 -- Laço de repetição incremental
 
 SET SERVEROUTPUT ON
-ACCEPT pLimite PROMPT 'Digite o valor do limite: '
+ACCEPT p_limite PROMPT 'Digite o valor do limite: '
 DECLARE
-  vInicio INTEGER(3) := 1;
-  vFim NUMBER(38) := &pLimite;
+  v_inicio INTEGER(3) := 1;
+  v_fim NUMBER(38) := &p_limite;
 BEGIN
-  FOR i IN vInicio..vFim LOOP
+  FOR i IN v_inicio..v_fim LOOP
     DBMS_OUTPUT.PUT_LINE('Número: ' || TO_CHAR(i));
   END LOOP;
 END;
 
+
 -- Laço de repetição decremental
 
 SET SERVEROUTPUT ON
-ACCEPT pInicio PROMPT 'Digite o valor do inicial: '
+ACCEPT p_inicio PROMPT 'Digite o valor do inicial: '
 DECLARE
-  vInicio NUMBER(38) := &pInicio;
-  vFim NUMBER(38) := &pInicio + 10;
+  v_inicio NUMBER(38) := &p_inicio;
+  v_fim NUMBER(38) := &p_inicio + 10;
 BEGIN
-  FOR i IN REVERSE vInicio..vFim LOOP
+  FOR i IN REVERSE v_inicio..v_fim LOOP
     DBMS_OUTPUT.PUT_LINE('Número: ' || TO_CHAR(i));
   END LOOP;
 END;

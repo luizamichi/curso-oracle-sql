@@ -13,46 +13,48 @@
 SET SERVEROUTPUT ON
 ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.';
 DECLARE
-  vTotal NUMBER(38) := 1;
+  v_total NUMBER(38) := 1;
 BEGIN
-  <<LOOP1>>
+  <<loop1>>
   FOR i IN 1..8 LOOP
     DBMS_OUTPUT.PUT_LINE('I: ' || TO_CHAR(i));
 
-    <<LOOP2>>
+    <<loop2>>
     FOR j IN 1..8 LOOP
       DBMS_OUTPUT.PUT_LINE('J: ' || TO_CHAR(j));
-      DBMS_OUTPUT.PUT_LINE('Total: ' || TO_CHAR(vTotal, '99G999G999G999G999G999G999G999D99'));
-      vTotal := vTotal * 2;
-      -- EXIT LOOP1 WHEN vTotal > 1000000000000000;
+      DBMS_OUTPUT.PUT_LINE('Total: ' || TO_CHAR(v_total, '99G999G999G999G999G999G999G999D99'));
+      v_total := v_total * 2;
+      -- EXIT LOOP1 WHEN v_total > 1000000000000000;
     END LOOP;
   END LOOP;
 
-  DBMS_OUTPUT.PUT_LINE('Total final: ' || TO_CHAR(vTotal, '99G999G999G999G999G999G999G999D99'));
+  DBMS_OUTPUT.PUT_LINE('Total final: ' || TO_CHAR(v_total, '99G999G999G999G999G999G999G999D99'));
 END;
+
 
 -- Utilizando EXIT com label
 
 SET SERVEROUTPUT ON
 ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.';
 DECLARE
-  vTotal NUMBER(38) := 1;
+  v_total NUMBER(38) := 1;
 BEGIN
-  <<LOOP1>>
+  <<loop1>>
   FOR i IN 1..8 LOOP
     DBMS_OUTPUT.PUT_LINE('I: ' || TO_CHAR(i));
 
-    <<LOOP2>>
+    <<loop2>>
     FOR j IN 1..8 LOOP
       DBMS_OUTPUT.PUT_LINE('J: ' || TO_CHAR(j));
-      DBMS_OUTPUT.PUT_LINE('Total: ' || TO_CHAR(vTotal, '99G999G999G999G999G999G999G999D99'));
-      vTotal := vTotal * 2;
-      EXIT LOOP1 WHEN vTotal > 1000000000000000;
+      DBMS_OUTPUT.PUT_LINE('Total: ' || TO_CHAR(v_total, '99G999G999G999G999G999G999G999D99'));
+      v_total := v_total * 2;
+      EXIT LOOP1 WHEN v_total > 1000000000000000;
     END LOOP;
   END LOOP;
 
-  DBMS_OUTPUT.PUT_LINE('Total final: ' || TO_CHAR(vTotal, '99G999G999G999G999G999G999G999D99'));
+  DBMS_OUTPUT.PUT_LINE('Total final: ' || TO_CHAR(v_total, '99G999G999G999G999G999G999G999D99'));
 END;
+
 
 -- Controlando LOOPs aninhados
 
@@ -70,40 +72,42 @@ END;
 
 SET SERVEROUTPUT ON
 DECLARE
-  vContadorLinhas NUMBER(38) := 0;
+  v_contador_linhas NUMBER(38) := 0;
 BEGIN
-  <<LOOP1>>
+  <<loop1>>
   FOR l IN 1..10 LOOP
     DBMS_OUTPUT.PUT_LINE('Linha ' || TO_CHAR(l));
-    vContadorLinhas := vContadorLinhas + 1;
+    v_contador_linhas := v_contador_linhas + 1;
   END LOOP;
 
-  DBMS_OUTPUT.PUT_LINE('Total de linhas: ' || vContadorLinhas);
+  DBMS_OUTPUT.PUT_LINE('Total de linhas: ' || v_contador_linhas);
 END;
+
 
 -- Segundo vamos fazer um loop para imprimir todos os números de colunas
 
 SET SERVEROUTPUT ON
 DECLARE
-  vContadorColunas NUMBER(38) := 0;
+  v_contador_colunas NUMBER(38) := 0;
 BEGIN
-  <<LOOP1>>
+  <<loop1>>
   FOR c IN 1..10 LOOP
     DBMS_OUTPUT.PUT_LINE('Coluna ' || TO_CHAR(c));
-    vContadorColunas := vContadorColunas + 1;
+    v_contador_colunas := v_contador_colunas + 1;
   END LOOP;
 
-  DBMS_OUTPUT.PUT_LINE('Total de colunas: ' || vContadorColunas);
+  DBMS_OUTPUT.PUT_LINE('Total de colunas: ' || v_contador_colunas);
 END;
+
 
 -- Terceiro vamos fazer um loop para imprimir todos os números das linhas
 --   e dentro deste loop faremos outro loop para imprimir os todos os números de colunas de cada linha
 
 SET SERVEROUTPUT ON
 BEGIN
-  <<LOOP1>>
+  <<loop1>>
   FOR l IN 1..10 LOOP
-    <<LOOP2>>
+    <<loop2>>
     FOR c IN 1..10 LOOP
       DBMS_OUTPUT.PUT_LINE('Linha ' || TO_CHAR(l) || ' - Coluna ' || TO_CHAR(c));
     END LOOP;

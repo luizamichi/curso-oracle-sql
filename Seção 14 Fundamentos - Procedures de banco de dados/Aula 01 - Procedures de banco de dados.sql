@@ -8,19 +8,19 @@
 --
 
 
--- Criando uma Procedure de Banco de Dados
+-- Criando uma procedure de banco de dados
 
 CREATE OR REPLACE PROCEDURE PRC_INSERE_EMPREGADO (
-  pfirst_name    IN VARCHAR2,
-  plast_name     IN VARCHAR2,
-  pemail         IN VARCHAR2,
-  pphone_number  IN VARCHAR2,
-  phire_date     IN DATE DEFAULT SYSDATE,
-  pjob_id        IN VARCHAR2,
-  psalary        IN NUMBER,
-  pcommicion_pct IN NUMBER,
-  pmanager_id    IN NUMBER,
-  pdepartment_id IN NUMBER
+  p_first_name    IN VARCHAR2,
+  p_last_name     IN VARCHAR2,
+  p_email         IN VARCHAR2,
+  p_phone_number  IN VARCHAR2,
+  p_hire_date     IN DATE DEFAULT SYSDATE,
+  p_job_id        IN VARCHAR2,
+  p_salary        IN NUMBER,
+  p_commicion_pct IN NUMBER,
+  p_manager_id    IN NUMBER,
+  p_department_id IN NUMBER
 ) IS
 -- Nenhuma váriável declarada
 BEGIN
@@ -38,19 +38,19 @@ BEGIN
     department_id)
   VALUES (
     employees_seq.nextval,
-    pfirst_name,
-    plast_name,
-    pemail,
-    pphone_number,
-    phire_date,
-    pjob_id,
-    psalary,
-    pcommicion_pct,
-    pmanager_id,
-    pdepartment_id);
+    p_first_name,
+    p_last_name,
+    p_email,
+    p_phone_number,
+    p_hire_date,
+    p_job_id,
+    p_salary,
+    p_commicion_pct,
+    p_manager_id,
+    p_department_id);
 EXCEPTION
   WHEN OTHERS THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20001, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
 
 

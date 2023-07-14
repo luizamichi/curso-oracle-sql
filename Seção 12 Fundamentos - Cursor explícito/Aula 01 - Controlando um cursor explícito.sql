@@ -40,7 +40,7 @@ DECLARE
     SELECT *
       FROM employees; -- Declaração do cursor
 
-  employees_record employees_cursor%rowtype;
+  employees_record employees_cursor%ROWTYPE;
 BEGIN
   OPEN employees_cursor; -- Abre a consulta do cursor
 
@@ -48,7 +48,7 @@ BEGIN
     FETCH employees_cursor
     INTO employees_record; -- Carrega o registro do cursor para a variável do tipo record
 
-    EXIT WHEN employees_cursor%notfound;
+    EXIT WHEN employees_cursor%NOTFOUND;
 
     DBMS_OUTPUT.PUT_LINE(employees_record.employee_id || ' - ' ||
                          employees_record.first_name || ' ' ||
@@ -75,14 +75,14 @@ DECLARE
     SELECT *
       FROM employees; -- Declaração do cursor
 
-  employees_record employees_cursor%rowtype;
+  employees_record employees_cursor%ROWTYPE;
 BEGIN
   OPEN employees_cursor; -- Abre a consulta do cursor
 
   FETCH employees_cursor
   INTO employees_record; -- Carrega o registro do cursor para a variável do tipo record
 
-  WHILE employees_cursor%found LOOP
+  WHILE employees_cursor%FOUND LOOP
     DBMS_OUTPUT.PUT_LINE(employees_record.employee_id || ' - ' ||
                          employees_record.first_name || ' ' ||
                          employees_record.last_name || ' - ' ||

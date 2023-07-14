@@ -57,21 +57,21 @@ DESC FNC_CONSULTA_SALARIO_EMPREGADO
 -- Forçando um erro de compilação
 
 CREATE OR REPLACE FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (
-  pEmployee_id IN NUMBER
+  p_employee_id IN NUMBER
 ) RETURN NUMBER IS
-  vSalary employees.salary%TYPE;
+  v_salary employees.salary%TYPE;
 BEGIN
   SELECT salary
-    INTO vSalary
+    INTO v_salary
     FROM employees
-   WHERE employee_id = pEmployee_id;
+   WHERE employee_id = p_employee_id;
 
-  RETURN vSalary;
+  RETURN v_salary;
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
     RAISE_APPLICATION_ERROR(-20001, 'Empregado inexistente');
   WHEN OTHERS THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
 
 

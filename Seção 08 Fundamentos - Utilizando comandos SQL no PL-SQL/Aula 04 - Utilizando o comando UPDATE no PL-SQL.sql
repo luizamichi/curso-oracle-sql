@@ -10,11 +10,11 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vEmployee_id employees.employee_id%type := 150;
-  vPercentual NUMBER(3) := 10;
+  v_employee_id employees.employee_id%TYPE := 150;
+  v_percentual NUMBER(3) := 10;
 BEGIN
   UPDATE employees
-     SET salary = salary * (1 + vPercentual / 100)
-   WHERE employee_id = vEmployee_id;
+     SET salary = salary * (1 + v_percentual / 100)
+   WHERE employee_id = v_employee_id;
   COMMIT;
 END;

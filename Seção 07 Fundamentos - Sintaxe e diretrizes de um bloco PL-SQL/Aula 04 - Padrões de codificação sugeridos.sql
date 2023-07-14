@@ -39,18 +39,18 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vBloco1 VARCHAR2(20) := 'Bloco 1';
+  v_bloco1 VARCHAR2(20) := 'Bloco 1';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
 
-  -- Se você referencia vBloco2 aqui ocorrerá erro
+  -- Se você referencia v_bloco2 aqui ocorrerá erro
   DECLARE
-    vBloco2 VARCHAR2(20) := 'Bloco 2';
+    v_bloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || vBloco2);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || v_bloco2);
   END;
 
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-  -- Se você referencia vBloco2 aqui ocorrerá erro
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
+  -- Se você referencia v_bloco2 aqui ocorrerá erro
 END;

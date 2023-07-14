@@ -9,25 +9,24 @@
 
 
 DECLARE
-  vemployee_id employees.employee_id%TYPE := 300;
-  vfirst_name employees.first_name%TYPE := 'Robert';
-  vlast_name employees.last_name%TYPE := 'Ford';
-  vjob_id employees.job_id%TYPE := 'XX_YYYY';
-  vphone_number employees.phone_number%TYPE := '650.511.9844';
-  vemail employees.email%TYPE := 'RFORD';
-  efk_inexistente EXCEPTION;
-  PRAGMA EXCEPTION_INIT(efk_inexistente, -2291);
+  v_employee_id employees.employee_id%TYPE := 300;
+  v_first_name employees.first_name%TYPE := 'Robert';
+  v_last_name employees.last_name%TYPE := 'Ford';
+  v_job_id employees.job_id%TYPE := 'XX_YYYY';
+  v_phone_number employees.phone_number%TYPE := '650.511.9844';
+  v_email employees.email%TYPE := 'RFORD';
+  e_fk_inexistente EXCEPTION;
+  PRAGMA EXCEPTION_INIT(e_fk_inexistente, -2291);
 BEGIN
   INSERT INTO employees (employee_id, first_name, last_name, phone_number, email, hire_date, job_id)
-                 VALUES (vemployee_id, vfirst_name, vlast_name, vphone_number, vemail, SYSDATE, vjob_id);
+                 VALUES (v_employee_id, v_first_name, v_last_name, v_phone_number, v_email, SYSDATE, v_job_id);
 EXCEPTION
-  WHEN efk_inexistente
-  THEN
+  WHEN e_fk_inexistente THEN
     RAISE_APPLICATION_ERROR(-20003, 'Job inexistente!');
-  WHEN OTHERS
-  THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+  WHEN OTHERS THEN
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
+
 
 -- Forçando o erro para descobrir o código de erro a ser tratado
 

@@ -12,20 +12,20 @@
 
 SET SERVEROUTPUT ON
 DECLARE
-  vBloco1 VARCHAR2(20) := 'Bloco 1';
+  v_bloco1 VARCHAR2(20) := 'Bloco 1';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
 
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
   DECLARE
-    vBloco2 VARCHAR2(20) := 'Bloco 2';
+    v_bloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || vBloco2);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || v_bloco2);
   END;
 
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
 END;
 
 
@@ -33,67 +33,70 @@ END;
 
 SET SERVEROUTPUT ON
 DECLARE
-  vBloco1 VARCHAR2(20) := 'Bloco 1';
+  v_bloco1 VARCHAR2(20) := 'Bloco 1';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
 
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
   DECLARE
-    vBloco1 VARCHAR2(20) := 'Bloco 2';
-    vBloco2 VARCHAR2(20) := 'Bloco 2';
+    -- Não é uma boa prática declarar "v_bloco1" aqui, pois pertence ao espoco externo
+    -- Mas como exemplo, vemos que o valor obedece ao escopo interno
+    -- Recomenda-se utilizar outro nome, exemplo: "v_bloco1_inner"
+    v_bloco1 VARCHAR2(20) := 'Bloco 2';
+    v_bloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável 1 do bloco 2: ' || vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável 2 do bloco 2: ' || vBloco2);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável 1 do bloco 2: ' || v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável 2 do bloco 2: ' || v_bloco2);
   END;
 
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || vBloco1);
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || v_bloco1);
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
 END;
 
 
 -- Identificando blocos através de labels
 
 SET SERVEROUTPUT ON
-<<BLOCO1>>
+<<bloco1>>
 DECLARE
-  vBloco1 VARCHAR2(20) := 'Bloco 1';
+  v_bloco1 VARCHAR2(20) := 'Bloco 1';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
 
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
-  <<BLOCO2>>
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
+  <<bloco2>>
   DECLARE
-    vBloco2 VARCHAR2(20) := 'Bloco 2';
+    v_bloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || bloco2.vBloco2);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 2: ' || bloco2.v_bloco2);
   END;
 
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
 END;
 
 
 -- Identificando blocos através de labels com variáveis que sobrescrevem a declarada no bloco aninhado
 
 SET SERVEROUTPUT ON
-<<BLOCO1>>
+<<bloco1>>
 DECLARE
-  vBloco1 VARCHAR2(20) := 'Bloco 1';
+  v_bloco1 VARCHAR2(20) := 'Bloco 1';
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
 
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
-  <<BLOCO2>>
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
+  <<bloco2>>
   DECLARE
-    vBloco1 VARCHAR2(20) := 'Bloco 2';
-    vBloco2 VARCHAR2(20) := 'Bloco 2';
+    v_bloco1 VARCHAR2(20) := 'Bloco 2';
+    v_bloco2 VARCHAR2(20) := 'Bloco 2';
   BEGIN
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável 1 do bloco 2: ' || bloco2.vBloco1);
-    DBMS_OUTPUT.PUT_LINE('Referenciando variável 2 do bloco 2: ' || bloco2.vBloco2);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável 1 do bloco 2: ' || bloco2.v_bloco1);
+    DBMS_OUTPUT.PUT_LINE('Referenciando variável 2 do bloco 2: ' || bloco2.v_bloco2);
   END;
 
-  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.vBloco1);
-  -- Se você referencia "vBloco2" aqui ocorrerá erro
+  DBMS_OUTPUT.PUT_LINE('Referenciando variável do bloco 1: ' || bloco1.v_bloco1);
+  -- Se você referencia "v_bloco2" aqui ocorrerá erro
 END;

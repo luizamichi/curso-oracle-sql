@@ -12,32 +12,33 @@
 
 DROP PROCEDURE PRC_CONSULTA_EMPREGADO;
 
--- Recriando a Procedure para manter o exemplo do Curso
+
+-- Recriando a procedure para manter o exemplo do curso
 
 CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
-  pEmployee_id IN NUMBER,
-  pFirst_name OUT NOCOPY VARCHAR2,
-  pLast_name OUT NOCOPY VARCHAR2,
-  pEmail OUT NOCOPY VARCHAR2,
-  pPhone_number OUT NOCOPY VARCHAR2,
-  pHire_date OUT NOCOPY DATE,
-  pJob_id OUT NOCOPY VARCHAR2,
-  pSalary OUT NOCOPY NUMBER,
-  pCommission_pct OUT NOCOPY NUMBER,
-  pManager_id OUT NOCOPY NUMBER,
-  pDepartment_id OUT NOCOPY NUMBER
+  p_employee_id IN NUMBER,
+  p_first_name OUT NOCOPY VARCHAR2,
+  p_last_name OUT NOCOPY VARCHAR2,
+  p_email OUT NOCOPY VARCHAR2,
+  p_phone_number OUT NOCOPY VARCHAR2,
+  p_hire_date OUT NOCOPY DATE,
+  p_job_id OUT NOCOPY VARCHAR2,
+  p_salary OUT NOCOPY NUMBER,
+  p_commission_pct OUT NOCOPY NUMBER,
+  p_manager_id OUT NOCOPY NUMBER,
+  p_department_id OUT NOCOPY NUMBER
 ) IS
 BEGIN
   SELECT first_name, last_name, email, phone_number, hire_date,
          job_id, salary, commission_pct, manager_id, department_id
-    INTO pFirst_name, pLast_name, pEmail, pPhone_number, pHire_date,
-         pJob_id, pSalary, pCommission_pct, pManager_id, pDepartment_id
+    INTO p_first_name, p_last_name, p_email, p_phone_number, p_hire_date,
+         p_job_id, p_salary, p_commission_pct, p_manager_id, p_department_id
     FROM employees
-   WHERE employee_id = pEmployee_id;
+   WHERE employee_id = p_employee_id;
 
 EXCEPTION
   WHEN NO_DATA_FOUND THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || PEMPLOYEE_ID);
+    RAISE_APPLICATION_ERROR(-20001, 'Empregado não existe: ' || p_employee_id);
   WHEN OTHERS THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || SQLERRM);
+    RAISE_APPLICATION_ERROR(-20002, 'Erro Oracle: ' || SQLCODE || ' ' || SQLERRM);
 END;
