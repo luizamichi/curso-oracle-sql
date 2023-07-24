@@ -10,12 +10,12 @@
 
 -- Removendo procedure de Banco de Dados
 
-DROP PROCEDURE PRC_CONSULTA_EMPREGADO;
+DROP PROCEDURE prc_consulta_empregado;
 
 
 -- Recriando a procedure para manter o exemplo do curso
 
-CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
+CREATE OR REPLACE PROCEDURE prc_consulta_empregado (
   p_employee_id IN NUMBER,
   p_first_name OUT NOCOPY VARCHAR2,
   p_last_name OUT NOCOPY VARCHAR2,

@@ -8,10 +8,10 @@
 --
 
 
-CREATE OR REPLACE PACKAGE PKG_EMPREGADOS IS
+CREATE OR REPLACE PACKAGE pkg_empregados IS
   g_min_salary employees.salary%TYPE;
 
-  PROCEDURE PRC_INSERE_EMPREGADO (
+  PROCEDURE prc_insere_empregado (
     p_first_name IN VARCHAR2,
     p_last_name IN VARCHAR2,
     p_email IN VARCHAR2,
@@ -24,12 +24,12 @@ CREATE OR REPLACE PACKAGE PKG_EMPREGADOS IS
     p_department_id IN NUMBER
   );
 
-  PROCEDURE PRC_AUMENTA_SALARIO_EMPREGADO (
+  PROCEDURE prc_aumenta_salario_empregado (
     p_employee_id IN NUMBER,
     p_percentual IN NUMBER
   );
 
-  FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (
+  FUNCTION fnc_consulta_salario_empregado (
     p_employee_id IN NUMBER
   ) RETURN NUMBER;
-END PKG_EMPREGADOS;
+END pkg_empregados;

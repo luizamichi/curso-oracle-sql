@@ -8,4 +8,4 @@
 --
 
 
-DROP FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO;
+DROP FUNCTION fnc_consulta_salario_empregado;

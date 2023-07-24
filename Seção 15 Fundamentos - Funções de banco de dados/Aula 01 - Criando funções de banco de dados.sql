@@ -10,7 +10,7 @@
 
 -- Criando funções de banco de dados
 
-CREATE OR REPLACE FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (
+CREATE OR REPLACE FUNCTION fnc_consulta_salario_empregado (
   p_employee_id IN NUMBER
 ) RETURN NUMBER IS
   v_salary employees.salary%TYPE;
@@ -38,7 +38,7 @@ DECLARE
   v_employee_id employees.employee_id%TYPE := &p_employee_id;
   v_salary      employees.salary%TYPE;
 BEGIN
-  v_salary := FNC_CONSULTA_SALARIO_EMPREGADO(v_employee_id);
+  v_salary := fnc_consulta_salario_empregado(v_employee_id);
   DBMS_OUTPUT.PUT_LINE('Salário: ' || v_salary);
 END;
 

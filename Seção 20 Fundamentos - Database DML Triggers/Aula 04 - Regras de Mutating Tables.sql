@@ -16,7 +16,7 @@
   a trigger disparada está associada
 */
 
-CREATE OR REPLACE TRIGGER A_I_EMPLOYEES_R_TRG
+CREATE OR REPLACE TRIGGER a_i_employees_r_trg
   AFTER INSERT
   ON employees
   FOR EACH ROW
@@ -38,7 +38,7 @@ END;
 
 -- Corrigindo a trigger para que não viole a regra 1
 
-CREATE OR REPLACE TRIGGER A_I_EMPLOYEES_R_TRG
+CREATE OR REPLACE TRIGGER a_i_employees_r_trg
   BEFORE INSERT
   ON employees
   FOR EACH ROW
@@ -62,7 +62,7 @@ END;
   Regra 2 de Mutating Tables: Não leia informações de tabelas que estejam sendo modificadas
 */
 
-CREATE OR REPLACE TRIGGER B_U_VALIDATE_SALARY_EMPLOYEES_R_TRG
+CREATE OR REPLACE TRIGGER b_u_validate_salary_employees_r_trg
   BEFORE UPDATE OF salary
   ON employees
   FOR EACH ROW
@@ -88,40 +88,40 @@ UPDATE employees
 
 COMMIT;
 
-DROP TRIGGER A_I_EMPLOYEES_R_TRG;
+DROP TRIGGER a_i_employees_r_trg;
 
-DROP TRIGGER B_U_VALIDATE_SALARY_EMPLOYEES_R_TRG;
+DROP TRIGGER b_u_validate_salary_employees_r_trg;
 
 
 -- Resolvendo o problema de Mutating Tables
 
-CREATE OR REPLACE PACKAGE PKG_EMPLOYEES_DADOS
+CREATE OR REPLACE PACKAGE pkg_employees_dados
 AS
   TYPE max_salary_table_type IS TABLE OF NUMBER(10, 2)
   INDEX BY BINARY_INTEGER;
 
   g_max_salary max_salary_table_type;
-END PKG_EMPLOYEES_DADOS;
+END pkg_employees_dados;
 
-CREATE OR REPLACE TRIGGER B_IU_VALIDATE_SALARY_EMPLOYEES_S_TRG
+CREATE OR REPLACE TRIGGER b_iu_validate_salary_employees_s_trg
   BEFORE INSERT OR UPDATE OF salary
   ON employees
 DECLARE
   v_max_salary employees.salary%TYPE;
 BEGIN
   SELECT MAX(salary)
-    INTO PKG_EMPLOYEES_DADOS.g_max_salary(1)
+    INTO pkg_employees_dados.g_max_salary(1)
     FROM employees;
 END;
 
-CREATE OR REPLACE TRIGGER B_IU_VALIDATE_SALARY_EMPLOYEES_R_TRG
+CREATE OR REPLACE TRIGGER b_iu_validate_salary_employees_r_trg
   BEFORE INSERT OR UPDATE OF salary
   ON employees
   FOR EACH ROW
 DECLARE
   v_max_salary employees.salary%TYPE;
 BEGIN
-  IF :new.salary > PKG_EMPLOYEES_DADOS.g_max_salary(1) * 1.2 THEN
+  IF :new.salary > pkg_employees_dados.g_max_salary(1) * 1.2 THEN
     RAISE_APPLICATION_ERROR(-20001, 'Novo salario não pode ser superior ao maior salario + 20%');
   END IF;
 END;

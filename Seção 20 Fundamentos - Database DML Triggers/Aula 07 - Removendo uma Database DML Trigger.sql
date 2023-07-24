@@ -8,4 +8,4 @@
 --
 
 
-DROP TRIGGER B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG;
+DROP TRIGGER b_iud_valida_horario_employees_s_trg;

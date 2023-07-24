@@ -8,7 +8,7 @@
 --
 
 
-CREATE OR REPLACE PROCEDURE PRC_AUMENTA_SALARIO_EMPREGADO (
+CREATE OR REPLACE PROCEDURE prc_aumenta_salario_empregado (
   p_employee_id IN NUMBER,
   p_percentual IN NUMBER
 ) IS
@@ -27,7 +27,7 @@ END;
 -- Executando a procedure pelo bloco PL/SQL
 
 BEGIN
-  PRC_AUMENTA_SALARIO_EMPREGADO(109, 10);
+  prc_aumenta_salario_empregado(109, 10);
   COMMIT;
 END;
 

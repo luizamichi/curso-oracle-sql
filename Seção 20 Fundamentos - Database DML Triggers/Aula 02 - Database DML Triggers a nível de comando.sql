@@ -10,7 +10,7 @@
 
 -- Database DML Triggers a nível de comando
 
-CREATE OR REPLACE TRIGGER B_I_EMPLOYEES_S_TRG
+CREATE OR REPLACE TRIGGER b_i_employees_s_trg
   BEFORE INSERT ON employees
 BEGIN
   IF (TO_CHAR(SYSDATE, 'DAY') IN ('SABADO', 'DOMINGO') OR
@@ -23,14 +23,14 @@ END;
 -- Testando a validação da trigger
 
 BEGIN
-  PCK_EMPREGADOS.PRC_INSERE_EMPREGADO('George', 'Harrison', 'GHARRISON', '515.258.5690', SYSDATE, 'IT_PROG', 25000, NULL, 103, 60);
+  pkg_empregados.prc_insere_empregado('George', 'Harrison', 'GHARRISON', '515.258.5690', SYSDATE, 'IT_PROG', 25000, NULL, 103, 60);
   COMMIT;
 END;
 
 
 -- Criando uma trigger combinando vários eventos
 
-CREATE OR REPLACE TRIGGER B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG
+CREATE OR REPLACE TRIGGER b_iud_valida_horario_employees_s_trg
   BEFORE INSERT OR UPDATE OR DELETE
   ON employees
 BEGIN
@@ -51,6 +51,6 @@ END;
 -- Testando a validação da trigger
 
 BEGIN
-  PCK_EMPREGADOS.PRC_INSERE_EMPREGADO('George', 'Harrison', 'GHARRISON', '515.258.5690', SYSDATE, 'IT_PROG', 25000, NULL, 103, 60);
+  pkg_empregados.prc_insere_empregado('George', 'Harrison', 'GHARRISON', '515.258.5690', SYSDATE, 'IT_PROG', 25000, NULL, 103, 60);
   COMMIT;
 END;

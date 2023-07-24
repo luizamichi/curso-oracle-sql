@@ -10,7 +10,7 @@
 
 -- Utilizando parâmetros tipo OUT
 
-CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
+CREATE OR REPLACE PROCEDURE prc_consulta_empregado (
   p_employee_id    IN NUMBER,
   p_first_name     OUT VARCHAR2,
   p_last_name      OUT VARCHAR2,
@@ -47,7 +47,7 @@ SET VERIFY OFF
 DECLARE
   employees_record employees%ROWTYPE;
 BEGIN
-  PRC_CONSULTA_EMPREGADO(100, employees_record.first_name, employees_record.last_name, employees_record.email,
+  prc_consulta_empregado(100, employees_record.first_name, employees_record.last_name, employees_record.email,
                          employees_record.phone_number, employees_record.hire_date, employees_record.job_id, employees_record.salary,
                          employees_record.commission_pct, employees_record.manager_id, employees_record.department_id);
 
@@ -62,7 +62,7 @@ END;
 
 -- Utilizando parâmetros tipo OUT com opção NOCOPY
 
-CREATE OR REPLACE PROCEDURE PRC_CONSULTA_EMPREGADO (
+CREATE OR REPLACE PROCEDURE prc_consulta_empregado (
   p_employee_id    IN NUMBER,
   p_first_name     OUT NOCOPY VARCHAR2,
   p_last_name      OUT NOCOPY VARCHAR2,
@@ -98,7 +98,7 @@ SET VERIFY OFF
 DECLARE
   employees_record employees%ROWTYPE;
 BEGIN
-  PRC_CONSULTA_EMPREGADO(100, employees_record.first_name, employees_record.last_name, employees_record.email,
+  prc_consulta_empregado(100, employees_record.first_name, employees_record.last_name, employees_record.email,
                          employees_record.phone_number, employees_record.hire_date, employees_record.job_id, employees_record.salary,
                          employees_record.commission_pct, employees_record.manager_id, employees_record.department_id);
 

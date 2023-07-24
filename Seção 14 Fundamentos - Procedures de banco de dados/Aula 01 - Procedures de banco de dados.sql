@@ -10,7 +10,7 @@
 
 -- Criando uma procedure de banco de dados
 
-CREATE OR REPLACE PROCEDURE PRC_INSERE_EMPREGADO (
+CREATE OR REPLACE PROCEDURE prc_insere_empregado (
   p_first_name    IN VARCHAR2,
   p_last_name     IN VARCHAR2,
   p_email         IN VARCHAR2,
@@ -57,7 +57,7 @@ END;
 -- Executando a procedure pelo bloco PL/SQL
 
 BEGIN
-  PRC_INSERE_EMPREGADO('David', 'Bowie', 'DBOWIE', '515.127.4861', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60);
+  prc_insere_empregado('David', 'Bowie', 'DBOWIE', '515.127.4861', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60);
   COMMIT;
 END;
 
@@ -72,7 +72,7 @@ SELECT *
 
 -- Executando a procedure com o comando EXECUTE do SQL*PLUS
 
-EXEC PRC_INSERE_EMPREGADO('Greg', 'Lake', 'GLAKE', '515.127.4961', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60)
+EXEC prc_insere_empregado('Greg', 'Lake', 'GLAKE', '515.127.4961', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60)
 COMMIT;
 
 

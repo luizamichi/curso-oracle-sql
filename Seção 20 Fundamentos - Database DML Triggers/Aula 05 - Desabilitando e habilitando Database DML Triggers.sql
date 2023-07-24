@@ -10,12 +10,12 @@
 
 -- Desabilitando Database DML Triggers
 
-ALTER TRIGGER B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG disable;
+ALTER TRIGGER b_iud_valida_horario_employees_s_trg disable;
 
 
 -- Habilitando Database DML Triggers
 
-ALTER TRIGGER B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG enable;
+ALTER TRIGGER b_iud_valida_horario_employees_s_trg enable;
 
 
 -- Desabilitando todas Database DML Triggers da tabela employees

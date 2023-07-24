@@ -35,7 +35,7 @@ NOMAXVALUE;
 
 -- Criando uma trigger que gera log de auditoria para a Tabela EMPLOYEES para a coluna SALARY
 
-CREATE OR REPLACE TRIGGER A_IUD_EMPLOYESS_R_TRG
+CREATE OR REPLACE TRIGGER a_iud_employess_r_trg
   AFTER INSERT OR UPDATE OF salary OR DELETE
   ON EMPLOYEES
   FOR EACH ROW
@@ -72,7 +72,7 @@ BEGIN
     :old.salary,
     :new.salary
   );
-END A_IUD_EMPLOYESS_R_TRG;
+END a_iud_employess_r_trg;
 
 
 -- Testando o disparo da trigger
@@ -83,7 +83,7 @@ UPDATE employees
 
 -- Desabilitando a trigger B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG para poder testar a trigger fora do horário comercial
 
-ALTER TRIGGER B_IUD_VALIDA_HORARIO_EMPLOYEES_S_TRG DISABLE;
+ALTER TRIGGER b_iud_valida_horario_employees_s_trg DISABLE;
 
 
 -- Testando a trigger
@@ -110,7 +110,7 @@ SELECT *
 
 -- Cláusula WHEN
 
-CREATE OR REPLACE TRIGGER A_IUD_EMPLOYESS_R_TRG
+CREATE OR REPLACE TRIGGER a_iud_employess_r_trg
   AFTER INSERT OR UPDATE OF SALARY OR DELETE
   ON EMPLOYEES
   FOR EACH ROW
@@ -148,7 +148,7 @@ BEGIN
     :old.salary,
     :new.salary
   );
-END A_IUD_EMPLOYESS_R_TRG;
+END a_iud_employess_r_trg;
 
 
 -- Testando a trigger

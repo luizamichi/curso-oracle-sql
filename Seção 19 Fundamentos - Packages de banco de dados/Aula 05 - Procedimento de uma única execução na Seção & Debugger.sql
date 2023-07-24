@@ -12,8 +12,8 @@
 
 -- Procedimento de uma única execução na seção
 
-CREATE OR REPLACE PACKAGE BODY PKG_EMPREGADOS IS
-  PROCEDURE PRC_INSERE_EMPREGADO (
+CREATE OR REPLACE PACKAGE BODY pkg_empregados IS
+  PROCEDURE prc_insere_empregado (
     p_first_name    IN VARCHAR2,
     p_last_name     IN VARCHAR2,
     p_email         IN VARCHAR2,
@@ -26,7 +26,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_EMPREGADOS IS
     p_department_id IN NUMBER
   ) IS
   BEGIN
-    IF p_salary < PKG_EMPREGADOS.g_min_salary THEN
+    IF p_salary < pkg_empregados.g_min_salary THEN
       RAISE_APPLICATION_ERROR(-20002, 'Salario não pode ser inferior ao menor salario dos empregados!');
     END IF;
 
@@ -61,7 +61,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_EMPREGADOS IS
   END;
 
 
-  PROCEDURE PRC_AUMENTA_SALARIO_EMPREGADO (
+  PROCEDURE prc_aumenta_salario_empregado (
     p_employee_id IN NUMBER,
     p_percentual  IN NUMBER
   ) IS
@@ -77,7 +77,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_EMPREGADOS IS
   END;
 
 
-  FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (p_employee_id IN NUMBER) RETURN NUMBER IS
+  FUNCTION fnc_consulta_salario_empregado (p_employee_id IN NUMBER) RETURN NUMBER IS
     v_salary employees.salary%TYPE;
   BEGIN
     SELECT salary
@@ -98,6 +98,6 @@ BEGIN
   -- Procedimento de uma única execução que será realizado antes de qualquer chamada à funções/procedimentos do pacote
   -- Utilizado para popular a variável global
   SELECT MIN(salary)
-    INTO PKG_EMPREGADOS.g_min_salary
+    INTO pkg_empregados.g_min_salary
     FROM employees;
-END PKG_EMPREGADOS;
+END pkg_empregados;

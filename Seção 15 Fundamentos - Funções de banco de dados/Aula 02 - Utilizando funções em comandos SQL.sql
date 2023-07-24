@@ -10,7 +10,7 @@
 
 -- Utilizando funções em comandos SQL
 
-CREATE OR REPLACE FUNCTION FNC_CONSULTA_TITULO_CARGO_EMPREGADO (
+CREATE OR REPLACE FUNCTION fnc_consulta_titulo_cargo_empregado (
   p_job_id IN jobs.job_id%TYPE
 ) RETURN VARCHAR2 IS
   v_job_title jobs.job_title%TYPE;
@@ -32,17 +32,17 @@ END;
 -- Utilizando funções em comandos SQL
 
 SELECT employee_id, first_name, last_name, job_id,
-       FNC_CONSULTA_TITULO_CARGO_EMPREGADO(job_id) "JOB TITLE"
+       fnc_consulta_titulo_cargo_empregado(job_id) "JOB TITLE"
   FROM employees;
 
 
 -- Executando a função pelo comando SELECT
 
-SELECT FNC_CONSULTA_TITULO_CARGO_EMPREGADO('IT_PROG')
+SELECT fnc_consulta_titulo_cargo_empregado('IT_PROG')
   FROM DUAL;
 
 
 -- Executando a função pelo comando SELECT
 
-SELECT FNC_CONSULTA_SALARIO_EMPREGADO(130)
+SELECT fnc_consulta_salario_empregado(130)
   FROM DUAL;

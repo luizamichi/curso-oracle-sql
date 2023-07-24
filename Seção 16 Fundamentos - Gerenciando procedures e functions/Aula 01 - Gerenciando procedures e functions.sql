@@ -49,14 +49,14 @@ SELECT line, text
 
 -- Consultando a lista de parâmetros de procedimentos e Funções
 
-DESC PRC_INSERE_EMPREGADO
+DESC prc_insere_empregado
 
-DESC FNC_CONSULTA_SALARIO_EMPREGADO
+DESC fnc_consulta_salario_empregado
 
 
 -- Forçando um erro de compilação
 
-CREATE OR REPLACE FUNCTION FNC_CONSULTA_SALARIO_EMPREGADO (
+CREATE OR REPLACE FUNCTION fnc_consulta_salario_empregado (
   p_employee_id IN NUMBER
 ) RETURN NUMBER IS
   v_salary employees.salary%TYPE;
@@ -77,7 +77,7 @@ END;
 
 -- Consultando erros de compilação - Comando SHOW ERRORS
 
-SHOW ERRORS PROCEDURE FNC_CONSULTA_SALARIO_EMPREGADO
+SHOW ERRORS PROCEDURE fnc_consulta_salario_empregado
 
 
 -- Consultando erros de compilação - Visão USER_ERRORS
