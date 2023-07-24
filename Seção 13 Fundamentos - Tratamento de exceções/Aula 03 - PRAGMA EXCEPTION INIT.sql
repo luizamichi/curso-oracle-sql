@@ -31,4 +31,4 @@ END;
 -- Forçando o erro para descobrir o código de erro a ser tratado
 
 INSERT INTO employees (employee_id, first_name, last_name, phone_number, email, hire_date, job_id)
-               VALUES (employees_seq.nextval, 'Joseph', 'Smith', '3333333', 'JSMITH', SYSDATE, 'ZZZZ_XX');
+               VALUES (employees_seq.NEXTVAL, 'Joseph', 'Smith', '3333333', 'JSMITH', SYSDATE, 'ZZZZ_XX');

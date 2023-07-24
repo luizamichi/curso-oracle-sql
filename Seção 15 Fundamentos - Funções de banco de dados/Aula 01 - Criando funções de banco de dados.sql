@@ -55,7 +55,7 @@ BEGIN
     SELECT employees.employee_id, employees.employee_code
       FROM employees
   )
-     SET employee_code = TRIM(TO_CHAR(employees_seq.nextval, '0000000000'));
+     SET employee_code = TRIM(TO_CHAR(employees_seq.NEXTVAL, '0000000000'));
   COMMIT;
 END;
 

@@ -35,7 +35,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_EMPREGADOS IS
       manager_id,
       department_id
     ) VALUES (
-      employees_seq.nextval,
+      employees_seq.NEXTVAL,
       p_first_name,
       p_last_name,
       p_email,

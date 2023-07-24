@@ -36,3 +36,23 @@
 -- Identificador: 072
 -- Tempo: 7m
 --
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 20 - Database DML Triggers
+-- Aula: 01 - Database DML Triggers
+-- Autor: Emílio Scudero
+-- Identificador: 073
+-- Tempo: 18m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 20 - Database DML Triggers
+-- Aula: 08 - Apresentação do curso
+-- Autor: Emílio Scudero
+-- Identificador: 080
+-- Tempo: 19m
+--
