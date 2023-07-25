@@ -10,7 +10,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 08 - Utilizando comandos SQL no PL/SQL
+-- Seção: 08 - PL/SQL Fundamentos - Utilizando comandos SQL no PL/SQL
 -- Aula: 01 - Utilizando comandos SQL no PL/SQL
 -- Autor: Emílio Scudero
 -- Identificador: 021
@@ -20,7 +20,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 19 - Packages de banco de dados
+-- Seção: 19 - PL/SQL Fundamentos - Packages de banco de dados
 -- Aula: 01 - Packages de banco de dados (conceitos)
 -- Autor: Emílio Scudero
 -- Identificador: 065
@@ -30,7 +30,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 19 - Packages de banco de dados
+-- Seção: 19 - PL/SQL Fundamentos - Packages de banco de dados
 -- Aula: 08 - Vantagens e benefícios do uso de packages
 -- Autor: Emílio Scudero
 -- Identificador: 072
@@ -40,7 +40,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 20 - Database DML Triggers
+-- Seção: 20 - PL/SQL Fundamentos - Database DML Triggers
 -- Aula: 01 - Database DML Triggers
 -- Autor: Emílio Scudero
 -- Identificador: 073
@@ -50,7 +50,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 20 - Database DML Triggers
+-- Seção: 20 - PL/SQL Fundamentos - Database DML Triggers
 -- Aula: 08 - Apresentação do curso
 -- Autor: Emílio Scudero
 -- Identificador: 080
@@ -60,7 +60,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção 21: Avançado - Instalação do Oracle Database 21c XE
+-- Seção: 21 - PL/SQL Avançado - Instalação do Oracle Database 21c XE
 -- Aula: 01 - Download e Instalação do Oracle Database 21c XE
 -- Autor: Emílio Scudero
 -- Identificador: 081
@@ -70,7 +70,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção 21: Avançado - Instalação do Oracle Database 21c XE
+-- Seção: 21 - PL/SQL Avançado - Instalação do Oracle Database 21c XE
 -- Aula: 02 - Configurando o LISTENER e o TNSNAMES (criando e testando uma conexão local)
 -- Autor: Emílio Scudero
 -- Identificador: 082
@@ -80,7 +80,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 01 - Download e instalação do Oracle SQL Developer
 -- Autor: Emílio Scudero
 -- Identificador: 083
@@ -90,7 +90,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 02 - Criando uma conexão para o usuário SYS (DBA) no Oracle SQL Developer
 -- Autor: Emílio Scudero
 -- Identificador: 084
@@ -100,7 +100,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 03 - Criando um usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 085
@@ -110,7 +110,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 04 - Criando uma conexão para o usuário HR no SQL Developer
 -- Autor: Emílio Scudero
 -- Identificador: 086
@@ -120,7 +120,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 05 - Criando os objetos do schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 087
@@ -130,7 +130,7 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 06 - Populando os objetos do schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 088
@@ -140,9 +140,59 @@
 
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 22 - PL/SQL Fundamentos - Download e instalação do Oracle SQL Developer
+-- Seção: 22 - PL/SQL Avançado - Download e instalação do Oracle SQL Developer
 -- Aula: 07 - Criando índices, inserindo comentários e outros no schema do usuário HR
 -- Autor: Emílio Scudero
 -- Identificador: 089
 -- Tempo: 4m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 24 - PL/SQL Avançado - Bulk Collect
+-- Aula: 01 - Bulk Collect
+-- Autor: Emílio Scudero
+-- Identificador: 091
+-- Tempo: 5m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 24 - PL/SQL Avançado - Bulk Collect
+-- Aula: 02 - Associative Array of Records (Bulk Collect)
+-- Autor: Emílio Scudero
+-- Identificador: 092
+-- Tempo: 10m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 24 - PL/SQL Avançado - Bulk Collect
+-- Aula: 03 - Nested table of records (Bulk Collect)
+-- Autor: Emílio Scudero
+-- Identificador: 093
+-- Tempo: 4m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 24 - PL/SQL Avançado - Bulk Collect
+-- Aula: 04 - Varray of records (Bulk Collect)
+-- Autor: Emílio Scudero
+-- Identificador: 094
+-- Tempo: 5m
+--
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 24 - PL/SQL Avançado - Bulk Collect
+-- Aula: 05 - Utilizando métodos para controlar Collections
+-- Autor: Emílio Scudero
+-- Identificador: 095
+-- Tempo: 5m
 --

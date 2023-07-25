@@ -45,7 +45,7 @@ BEGIN
 
   -- Imprime os valores originais
   DBMS_OUTPUT.PUT_LINE('Antes' || CHR(13) || CHR(10));
-  FOR i IN 1..employees_table.count
+  FOR i IN 1..employees_table.COUNT
   LOOP
     DBMS_OUTPUT.PUT_LINE(employees_table(i).employee_id || ' - ' ||
                          employees_table(i).first_name || ' - ' ||
@@ -55,7 +55,7 @@ BEGIN
     employees_table(i).salary := employees_table(i).salary * 1.1;
   END LOOP;
 
-  IF employees_table.count >= 10 THEN
+  IF employees_table.COUNT >= 10 THEN
     -- Altera o salário dos 10 primeiros funcionários
     FORALL i IN 1..10
     UPDATE employees
@@ -71,7 +71,7 @@ BEGIN
 
   -- Imprime os novos valores
   DBMS_OUTPUT.PUT_LINE(CHR(13) || CHR(10) || 'Depois' || CHR(13) || CHR(10));
-  FOR i IN 1..employees_table.count
+  FOR i IN 1..employees_table.COUNT
   LOOP
     DBMS_OUTPUT.PUT_LINE(employees_table(i).employee_id || ' - ' ||
                          employees_table(i).first_name || ' - ' ||

@@ -11,7 +11,7 @@
 SET SERVEROUTPUT ON
 SET VERIFY OFF
 DECLARE
-  TYPE employees_table_type IS VARRAY (200) OF employees%ROWTYPE;
+  TYPE employees_table_type IS VARRAY(200) OF employees%ROWTYPE;
   employees_table employees_table_type := employees_table_type();
 BEGIN
   SELECT *

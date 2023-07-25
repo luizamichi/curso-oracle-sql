@@ -1,6 +1,6 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 06 - PL/SQL Fundamentos - Declaração de identificadores, variáveis e constantes
+-- Seção: 06 - Declaração de identificadores, variáveis e constantes
 -- Aula: 04 - Variável Bind
 -- Autor: Emílio Scudero
 -- Identificador: 016

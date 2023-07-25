@@ -1,6 +1,6 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 05 - PL/SQL Fundamentos - Bloco anônimo
+-- Seção: 05 - Bloco anônimo
 -- Aula: 01 - Bloco anônimo
 -- Autor: Emílio Scudero
 -- Identificador: 012

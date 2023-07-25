@@ -1,6 +1,6 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
--- Seção: 07 - PL/SQL Fundamentos - Sintaxe e diretrizes de um bloco PL/SQL
+-- Seção: 07 - Sintaxe e diretrizes de um bloco PL/SQL
 -- Aula: 04 - Padrões de codificação sugeridos
 -- Autor: Emílio Scudero
 -- Identificador: 020

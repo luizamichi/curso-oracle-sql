@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: 11 - Tipos compostos (collections)
--- Aula: 01 - Collections - Associative Array
+-- Aula: 01 - Associative Array - Collections
 -- Autor: Emílio Scudero
 -- Identificador: 037
 -- Tempo: 12m
