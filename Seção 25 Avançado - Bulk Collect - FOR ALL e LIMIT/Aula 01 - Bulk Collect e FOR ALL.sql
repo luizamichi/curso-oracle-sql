@@ -15,7 +15,7 @@ SELECT COUNT(*)
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-CREATE OR REPLACE PROCEDURE PRC_UPDATE_SALARY
+CREATE OR REPLACE PROCEDURE prc_update_salary
   (p_percentual IN NUMBER)
 IS
   TYPE employee_id_table_type IS
@@ -47,9 +47,9 @@ SELECT *
   FROM employees;
 
 
---- Executando PRC_UPDATE_TAX
+--- Executando PRC_UPDATE_SALARY
 
-EXEC PRC_UPDATE_SALARY(10)
+EXEC prc_update_salary(10)
 
 
 -- Consultando depois
@@ -64,7 +64,7 @@ ROLLBACK;
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-CREATE OR REPLACE PROCEDURE PRC_UPDATE_SALARY
+CREATE OR REPLACE PROCEDURE prc_update_salary
   (p_percentual IN NUMBER)
 IS
   TYPE employee_id_table_type IS
@@ -94,7 +94,7 @@ SELECT *
 
 --- Executando PRC_UPDATE_TAX
 
-EXEC PRC_UPDATE_SALARY(10)
+EXEC prc_update_salary(10)
 
 
 -- Consultando
