@@ -196,3 +196,13 @@
 -- Identificador: 095
 -- Tempo: 5m
 --
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 29 - Package DBMS_SCHEDULER
+-- Aula: 01 - Visão geral da package DBMS_SCHEDULER
+-- Autor: Emílio Scudero
+-- Identificador: 102
+-- Tempo: 3m
+--

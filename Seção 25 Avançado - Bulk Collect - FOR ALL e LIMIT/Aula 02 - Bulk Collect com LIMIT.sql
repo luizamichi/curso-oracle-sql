@@ -1,7 +1,7 @@
 --
 -- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
 -- Seção: 25 - Bulk Collect - FOR ALL e LIMIT
--- Aula: 01 - Bulk Collect com LIMIT
+-- Aula: 02 - Bulk Collect com LIMIT
 -- Autor: Emílio Scudero
 -- Identificador: 097
 -- Tempo: 19m
