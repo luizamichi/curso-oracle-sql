@@ -72,7 +72,7 @@ SELECT *
 
 -- Executando a procedure com o comando EXECUTE do SQL*PLUS
 
-EXEC prc_insere_empregado('Greg', 'Lake', 'GLAKE', '515.127.4961', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60)
+EXEC prc_insere_empregado('Greg', 'Lake', 'GLAKE', '515.127.4961', SYSDATE, 'IT_PROG', 15000, NULL, 103, 60);
 COMMIT;
 
 

@@ -54,7 +54,7 @@ SELECT *
 
 --- Executando PRC_UPDATE_SALARY2
 
-EXEC prc_update_salary2(10)
+EXEC prc_update_salary2(10);
 
 
 -- Consultando

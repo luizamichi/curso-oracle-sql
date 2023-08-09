@@ -16,7 +16,7 @@
 
 -- Executando a procedure DEPTREE_FILL
 
-EXEC DEPTREE_FILL('TABLE', 'HR', 'EMPLOYEES')
+EXEC DEPTREE_FILL('TABLE', 'HR', 'EMPLOYEES');
 
 
 -- Utilizando as visões DEPTREE

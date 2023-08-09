@@ -49,7 +49,7 @@ END;
 SELECT *
   FROM employees;
 
-EXEC prc_update_salary_employee(p_employee_id => 109, p_percentual => 10)
+EXEC prc_update_salary_employee(p_employee_id => 109, p_percentual => 10);
 
 SELECT *
   FROM employees;

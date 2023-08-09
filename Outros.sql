@@ -206,3 +206,13 @@
 -- Identificador: 102
 -- Tempo: 3m
 --
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 32 - LOBs - Large Objects
+-- Aula: 01 - Introdução
+-- Autor: Emílio Scudero
+-- Identificador: 111
+-- Tempo: 13m
+--

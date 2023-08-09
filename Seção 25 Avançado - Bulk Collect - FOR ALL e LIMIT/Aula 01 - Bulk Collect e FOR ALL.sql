@@ -49,7 +49,7 @@ SELECT *
 
 --- Executando PRC_UPDATE_SALARY
 
-EXEC prc_update_salary(10)
+EXEC prc_update_salary(10);
 
 
 -- Consultando depois
@@ -94,7 +94,7 @@ SELECT *
 
 --- Executando PRC_UPDATE_TAX
 
-EXEC prc_update_salary(10)
+EXEC prc_update_salary(10);
 
 
 -- Consultando

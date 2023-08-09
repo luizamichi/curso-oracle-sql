@@ -64,10 +64,10 @@ END;
 
 -- Executando a procedure
 
-EXEC prc_fetch_employees_cursor_dynamic(p_manager_id => 103, p_department_id => 60)
+EXEC prc_fetch_employees_cursor_dynamic(p_manager_id => 103, p_department_id => 60);
 
-EXEC prc_fetch_employees_cursor_dynamic(p_manager_id => 103)
+EXEC prc_fetch_employees_cursor_dynamic(p_manager_id => 103);
 
-EXEC prc_fetch_employees_cursor_dynamic(p_department_id => 60)
+EXEC prc_fetch_employees_cursor_dynamic(p_department_id => 60);
 
 EXEC prc_fetch_employees_cursor_dynamic;
