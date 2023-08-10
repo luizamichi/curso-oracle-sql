@@ -13,8 +13,7 @@ SET VERIFY OFF
 CREATE OR REPLACE PROCEDURE prc_fetch_employees_cursor_dynamic (
   p_manager_id    IN employees.manager_id%TYPE DEFAULT NULL,
   p_department_id IN employees.department_id%TYPE DEFAULT NULL
-)
-AS
+) IS
   TYPE employees_cursor_type IS REF CURSOR;
   employees_cursor   employees_cursor_type;
   v_employees_record employees%ROWTYPE;

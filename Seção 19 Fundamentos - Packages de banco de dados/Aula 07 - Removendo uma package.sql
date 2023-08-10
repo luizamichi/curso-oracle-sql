@@ -100,8 +100,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_empregados IS
   PROCEDURE prc_aumenta_salario_empregado (
     p_employee_id IN NUMBER,
     p_percentual  IN NUMBER
-  )
-  IS
+  ) IS
   -- Nenhuma váriável declarada
   BEGIN
     UPDATE employees

@@ -193,48 +193,48 @@ ADD (
 
 -- Criação da visualização EMPLOYEES DETAILS
 
-CREATE OR REPLACE VIEW emp_details_view
-  (employee_id,
-   job_id,
-   manager_id,
-   department_id,
-   location_id,
-   country_id,
-   first_name,
-   last_name,
-   salary,
-   commission_pct,
-   department_name,
-   job_title,
-   city,
-   state_province,
-   country_name,
-   region_name)
-AS
-SELECT
-  e.employee_id,
-  e.job_id,
-  e.manager_id,
-  e.department_id,
-  d.location_id,
-  l.country_id,
-  e.first_name,
-  e.last_name,
-  e.salary,
-  e.commission_pct,
-  d.department_name,
-  j.job_title,
-  l.city,
-  l.state_province,
-  c.country_name,
-  r.region_name
-FROM
-  employees e
-  INNER JOIN departments d ON e.department_id = d.department_id
-  INNER JOIN jobs j ON j.job_id = e.job_id
-  INNER JOIN locations l ON d.location_id = l.location_id
-  INNER JOIN countries c ON l.country_id = c.country_id
-  INNER JOIN regions r ON c.region_id = r.region_id
-WITH READ ONLY;
+CREATE OR REPLACE VIEW emp_details_view (
+  employee_id,
+  job_id,
+  manager_id,
+  department_id,
+  location_id,
+  country_id,
+  first_name,
+  last_name,
+  salary,
+  commission_pct,
+  department_name,
+  job_title,
+  city,
+  state_province,
+  country_name,
+  region_name
+) AS
+  SELECT
+    e.employee_id,
+    e.job_id,
+    e.manager_id,
+    e.department_id,
+    d.location_id,
+    l.country_id,
+    e.first_name,
+    e.last_name,
+    e.salary,
+    e.commission_pct,
+    d.department_name,
+    j.job_title,
+    l.city,
+    l.state_province,
+    c.country_name,
+    r.region_name
+  FROM
+    employees e
+    INNER JOIN departments d ON e.department_id = d.department_id
+    INNER JOIN jobs j ON j.job_id = e.job_id
+    INNER JOIN locations l ON d.location_id = l.location_id
+    INNER JOIN countries c ON l.country_id = c.country_id
+    INNER JOIN regions r ON c.region_id = r.region_id
+  WITH READ ONLY;
 
 COMMIT;

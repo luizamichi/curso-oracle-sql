@@ -14,8 +14,8 @@ SET SERVEROUTPUT ON
 SET VERIFY OFF
 CREATE OR REPLACE PROCEDURE prc_update_salary_employee (
   p_employee_id IN employees.employee_id%TYPE,
-  p_percentual  IN NUMBER)
-IS
+  p_percentual  IN NUMBER
+) IS
   v_cursor_id      INTEGER;
   v_rows_processed INTEGER;
 BEGIN
@@ -117,8 +117,7 @@ CREATE OR REPLACE TYPE employee_info_table AS TABLE OF employee_info;
 CREATE OR REPLACE FUNCTION fn_paginated_employees (
   p_page         IN NUMBER DEFAULT 1, -- Número da página desejada
   p_row_per_page IN NUMBER DEFAULT 10 -- Quantidade de registros por página
-) RETURN employee_info_table PIPELINED
-IS
+) RETURN employee_info_table PIPELINED IS
   v_page NUMBER;
   v_row_per_page NUMBER;
 BEGIN

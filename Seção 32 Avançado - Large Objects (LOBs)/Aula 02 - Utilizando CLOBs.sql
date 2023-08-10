@@ -50,8 +50,7 @@ SELECT DBMS_LOB.SUBSTR(resume, DBMS_LOB.GETLENGTH(resume), 1)
 
 COMMIT;
 
-CREATE OR REPLACE PROCEDURE prc_insere_resume(p_resume_id IN job_resumes.resume_id%TYPE, p_resume IN VARCHAR2)
-IS
+CREATE OR REPLACE PROCEDURE prc_insere_resume (p_resume_id IN job_resumes.resume_id%TYPE, p_resume IN VARCHAR2) IS
   v_resume_localizador CLOB;
   v_tamanho_texto      NUMBER;
   v_deslocamento       NUMBER;
@@ -80,8 +79,7 @@ SELECT LENGTH(resume), DBMS_LOB.GETLENGTH(resume)
 SELECT DBMS_LOB.SUBSTR(resume, DBMS_LOB.GETLENGTH(resume), 1)
   FROM job_resumes;
 
-CREATE OR REPLACE PROCEDURE prc_exibe_resume(p_resume_id IN job_resumes.resume_id%TYPE)
-IS
+CREATE OR REPLACE PROCEDURE prc_exibe_resume (p_resume_id IN job_resumes.resume_id%TYPE) IS
   v_resume_localizador CLOB;
   v_tamanho_texto      NUMBER;
   v_deslocamento       NUMBER;

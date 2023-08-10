@@ -216,3 +216,13 @@
 -- Identificador: 111
 -- Tempo: 13m
 --
+
+
+--
+-- Curso: Oracle PL/SQL Especialista (do básico ao avançado) 2023
+-- Seção: 34 - Oportunidades de carreira utilizando tecnologias Oracle
+-- Aula: 01 - Oportunidades de carreira utilizando tecnologias Oracle
+-- Autor: Emílio Scudero
+-- Identificador: 118
+-- Tempo: 7m
+--

@@ -15,9 +15,7 @@ SELECT COUNT(*)
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-CREATE OR REPLACE PROCEDURE prc_update_salary2
-  (p_percentual IN NUMBER)
-IS
+CREATE OR REPLACE PROCEDURE prc_update_salary2 (p_percentual IN NUMBER) IS
   v_limit CONSTANT INTEGER(2) := 30;
   TYPE employee_id_table_type IS
     TABLE OF employees.employee_id%TYPE INDEX BY BINARY_INTEGER; -- Type Associative Array

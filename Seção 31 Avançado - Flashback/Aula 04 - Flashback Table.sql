@@ -10,10 +10,9 @@
 
 -- Utilizando Flashback Table
 
-CREATE TABLE employees_copia2
-AS
-SELECT *
-  FROM employees;
+CREATE TABLE employees_copia2 AS
+  SELECT *
+    FROM employees;
 
 
 -- Conectado como SYS

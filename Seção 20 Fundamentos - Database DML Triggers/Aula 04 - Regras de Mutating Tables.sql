@@ -95,8 +95,7 @@ DROP TRIGGER b_u_validate_salary_employees_r_trg;
 
 -- Resolvendo o problema de Mutating Tables
 
-CREATE OR REPLACE PACKAGE pkg_employees_dados
-IS
+CREATE OR REPLACE PACKAGE pkg_employees_dados IS
   TYPE max_salary_table_type IS TABLE OF NUMBER(10, 2)
   INDEX BY BINARY_INTEGER;
 
