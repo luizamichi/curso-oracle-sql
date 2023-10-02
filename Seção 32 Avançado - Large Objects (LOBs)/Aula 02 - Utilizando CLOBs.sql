@@ -100,7 +100,7 @@ BEGIN
   DBMS_LOB.READ(v_resume_localizador, v_tamanho_texto, v_deslocamento, v_texto);
 
   v_loop := TRUNC((LENGTH(v_texto)) / 240) + 1;
-  FOR i IN 1 .. v_loop LOOP
+  FOR i IN 1..v_loop LOOP
     v_exibe := SUBSTR(v_texto, v_quantidade, 240);
     v_quantidade := v_quantidade + 240;
     DBMS_OUTPUT.PUT_LINE(v_exibe);

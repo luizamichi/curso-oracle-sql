@@ -9,7 +9,7 @@
 
 
 /*
-  No Oracle SQL Developer conecte-se como usuário SYS utilizando a sua conexão para o usuário SYS
+  No Oracle SQL Developer, conecte-se como usuário SYS utilizando a sua conexão para o usuário SYS
   Abra este script no Oracle SQL Developer e execute (F5)
 */
 
@@ -33,8 +33,8 @@ CREATE USER HR
 IDENTIFIED BY hr
 DEFAULT TABLESPACE users
 TEMPORARY TABLESPACE TEMP
-QUOTA unlimited on users
-QUOTA 0 on system;
+QUOTA unlimited ON users
+QUOTA 0 ON system;
 
 GRANT CONNECT, RESOURCE TO HR;
 

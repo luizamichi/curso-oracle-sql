@@ -29,7 +29,7 @@
 -- 3. Instalando o Oracle SQL Developer para Windows 64 Bits
 
 --    3.1 Copie ou mova o arquivo sqldeveloper-21.2.1.204.1703-x64.zip (ou versão mais atual)
---        para o drive C:
+--        para o drive C:\
 
 --    3.2 Extraia o arquivo sqldeveloper-21.2.1.204.1703-x64.zip (ou versão mais atual)
 --        para a pasta C:\sqldeveloper-21.2.1.204.1703-x64

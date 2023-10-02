@@ -88,7 +88,7 @@
 -- 4. Criando e Testando uma Conexão Local
 
 --    4.1 No menu Iniciar do Windows
---        Acesse: Orace - Ora DB21Home1 => Assistente de Configuração de Rede
+--        Acesse: Oracle - Ora DB21Home1 => Assistente de Configuração de Rede
 
 --        . Selecione Configuração do Nome do Serviço de Rede Local
 --          Clique Próximo
@@ -110,7 +110,7 @@
 --          Clique Próximo
 
 --        . Clique no botão Alterar Log-in
---          Nome do usuario: system
+--          Nome do usuário: system
 --          Senha: oracle (informe a senha que você definiu para os usuários sys e system na instalação)
 --          Clique Ok
 --          Clique Próximo

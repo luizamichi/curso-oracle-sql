@@ -64,13 +64,13 @@
 
 -- 5. Instalação do Oracle Database 21c XE
 
---    5.1 Mova o arquivo OracleXE213_Win64.zip para o drive C:
+--    5.1 Mova o arquivo OracleXE213_Win64.zip para o drive C:\
 
 --    5.2 Extraia o arquivo para a pasta OracleXE213_Win64
 
 --    5.3 Na pasta OracleXE213_Win64:
 
---        . Com o botão direito selecione setup.exe Executar como Administrador
+--        . Com o botão direito, selecione setup.exe Executar como Administrador
 --        . Aceite as opções default e clique NEXT até concluir a instalação
 
 --        Obs.: Defina uma senha simples (não use caracteres especiais) para o usuário SYS (DBA), por exemplo: oracle

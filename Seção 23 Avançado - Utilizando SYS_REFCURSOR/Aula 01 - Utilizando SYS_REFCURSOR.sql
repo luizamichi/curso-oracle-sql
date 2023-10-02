@@ -18,7 +18,7 @@ END prc_cursor_employees;
 
 -- Procedimento referenciando o parâmetro OUT SYS_REFCURSOR
 
-CREATE OR REPLACE PROCEDURE prc_display_empoyees IS
+CREATE OR REPLACE PROCEDURE prc_display_employees IS
   employees_cursor SYS_REFCURSOR;
   v_first_name     employees.first_name%TYPE;
   v_last_name      employees.last_name%TYPE;
@@ -33,19 +33,19 @@ BEGIN
   END LOOP;
 
   CLOSE employees_cursor;
-END prc_display_empoyees;
+END prc_display_employees;
 
 
--- Executando o procedimento PRC_DISPLAY_EMPOYEES
+-- Executando o procedimento PRC_DISPLAY_EMPLOYEES
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-EXECUTE prc_display_empoyees
+EXECUTE prc_display_employees
 
 
 -- Variável cursor e retorno referencindo um cursor
 
-CREATE OR REPLACE FUNCTION fnc_get_empoyees (pemployee_id IN NUMBER) RETURN SYS_REFCURSOR IS
+CREATE OR REPLACE FUNCTION fnc_get_employees (pemployee_id IN NUMBER) RETURN SYS_REFCURSOR IS
   employees_cursor SYS_REFCURSOR;
 BEGIN
   OPEN employees_cursor FOR
@@ -54,17 +54,17 @@ BEGIN
      WHERE employee_id = pemployee_id;
 
   RETURN employees_cursor;
-END fnc_get_empoyees;
+END fnc_get_employees;
 
 
 -- Referenciando a função
 
-CREATE OR REPLACE PROCEDURE prc_display_empoyees2 (pemployee_id IN NUMBER) IS
+CREATE OR REPLACE PROCEDURE prc_display_employees2 (pemployee_id IN NUMBER) IS
   employees_cursor SYS_REFCURSOR;
   v_first_name     employees.first_name%TYPE;
   v_last_name      employees.last_name%TYPE;
 BEGIN
-  employees_cursor := fnc_get_empoyees(pemployee_id);
+  employees_cursor := fnc_get_employees(pemployee_id);
 
   LOOP
     FETCH employees_cursor INTO v_first_name, v_last_name;
@@ -74,11 +74,11 @@ BEGIN
   END LOOP;
 
   CLOSE employees_cursor;
-END prc_display_empoyees2;
+END prc_display_employees2;
 
 
 -- Executando o procedimento
 
 SET SERVEROUTPUT ON
 SET VERIFY OFF
-EXECUTE prc_display_empoyees2(100)
+EXECUTE prc_display_employees2(100)
